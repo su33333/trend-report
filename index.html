@@ -131,6 +131,24 @@
   .meme-link { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; color: #2563EB; text-decoration: none; padding: 2px 8px; background: #EFF6FF; border-radius: 4px; transition: background .15s; }
   .meme-link:hover { background: #DBEAFE; text-decoration: underline; }
 
+  .creative-suggest { margin-top: 8px; }
+  .creative-suggest-label { font-size: 10px; font-weight: 700; color: var(--gray-500); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+  .creative-suggest-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+  .creative-tag { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 12px; background: linear-gradient(135deg, #F0F9FF, #E0F2FE); color: #0369A1; border: 1px solid #BAE6FD; transition: all .15s; cursor: default; }
+  .creative-tag:hover { transform: translateY(-1px); box-shadow: 0 2px 4px rgba(3,105,161,.15); }
+  .creative-tag.pov { background: linear-gradient(135deg, #FDF4FF, #FAE8FF); color: #86198F; border-color: #F0ABFC; }
+  .creative-tag.meme { background: linear-gradient(135deg, #FFFBEB, #FEF3C7); color: #92400E; border-color: #FDE68A; }
+  .creative-tag.ai-voice { background: linear-gradient(135deg, #F0FDF4, #DCFCE7); color: #166534; border-color: #86EFAC; }
+  .creative-tag.street { background: linear-gradient(135deg, #FFF7ED, #FFEDD5); color: #9A3412; border-color: #FDBA74; }
+  .creative-tag.livestream { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); color: #991B1B; border-color: #FCA5A5; }
+  .creative-tag.challenge { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); color: #1E40AF; border-color: #93C5FD; }
+  .creative-tag.skit { background: linear-gradient(135deg, #FDF2F8, #FCE7F3); color: #9D174D; border-color: #F9A8D4; }
+  .creative-tag.carousel { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); color: #065F46; border-color: #6EE7B7; }
+  .creative-tag.bgm { background: linear-gradient(135deg, #EDE9FE, #DDD6FE); color: #5B21B6; border-color: #C4B5FD; }
+  .creative-tag.reaction { background: linear-gradient(135deg, #F0F9FF, #E0F2FE); color: #0369A1; border-color: #BAE6FD; }
+  .creative-tag.story { background: linear-gradient(135deg, #FFF1F2, #FFE4E6); color: #BE123C; border-color: #FDA4AF; }
+  .creative-tag.ugc { background: linear-gradient(135deg, #FEFCE8, #FEF9C3); color: #854D0E; border-color: #FDE047; }
+
   .calendar-list { list-style: none; }
   .calendar-item { display: flex; align-items: center; gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--gray-100); }
   .calendar-item:last-child { border-bottom: none; }
@@ -245,6 +263,20 @@
   body.dark-mode .meme-stat.followers { background: #2E1065; color: #C4B5FD; }
   body.dark-mode .meme-link { background: #1E3A5F; color: #93C5FD; }
   body.dark-mode .copy-btn { background: #334155; color: #CBD5E1; border-color: #475569; }
+  body.dark-mode .creative-suggest-label { color: #94A3B8; }
+  body.dark-mode .creative-tag { background: #1E293B; border-color: #475569; }
+  body.dark-mode .creative-tag.pov { background: #2E1065; color: #E9D5FF; border-color: #7C3AED; }
+  body.dark-mode .creative-tag.meme { background: #422006; color: #FDE68A; border-color: #D97706; }
+  body.dark-mode .creative-tag.ai-voice { background: #052E16; color: #86EFAC; border-color: #16A34A; }
+  body.dark-mode .creative-tag.street { background: #431407; color: #FDBA74; border-color: #EA580C; }
+  body.dark-mode .creative-tag.livestream { background: #450A0A; color: #FCA5A5; border-color: #DC2626; }
+  body.dark-mode .creative-tag.challenge { background: #172554; color: #93C5FD; border-color: #2563EB; }
+  body.dark-mode .creative-tag.skit { background: #500724; color: #F9A8D4; border-color: #DB2777; }
+  body.dark-mode .creative-tag.carousel { background: #022C22; color: #6EE7B7; border-color: #059669; }
+  body.dark-mode .creative-tag.bgm { background: #2E1065; color: #C4B5FD; border-color: #7C3AED; }
+  body.dark-mode .creative-tag.reaction { background: #0C4A6E; color: #BAE6FD; border-color: #0284C7; }
+  body.dark-mode .creative-tag.story { background: #4C0519; color: #FDA4AF; border-color: #E11D48; }
+  body.dark-mode .creative-tag.ugc { background: #422006; color: #FDE047; border-color: #CA8A04; }
   body.dark-mode .heatmap-section { background: #1E293B; }
 
   @media print {
@@ -380,6 +412,15 @@
                   <a class="meme-link" href="https://www.tiktok.com/search?q=MBG%20Mas%20Bahlil%20Ganteng" target="_blank">🎵 TikTok</a>
                   <a class="meme-link" href="https://www.cnnindonesia.com/teknologi/20260526132423-192-1362506/cara-bikin-lagu-ai-seperti-mbg-mas-bahlil-ganteng-yang-viral-di-tiktok" target="_blank">📰 CNN Indonesia</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag ai-voice">🤖 AI配音</span>
+                    <span class="creative-tag bgm">🎵 BGM卡点</span>
+                    <span class="creative-tag challenge">💃 挑战赛</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -395,6 +436,14 @@
                   <a class="meme-link" href="https://www.youtube.com/results?search_query=Sumpah+Mati+Celyna+Grace+Indonesian+Idol" target="_blank">▶️ YouTube</a>
                   <a class="meme-link" href="https://x.com/search?q=Sumpah%20Mati%20Indonesian%20Idol" target="_blank">🐦 X</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag bgm">🎵 BGM卡点</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                    <span class="creative-tag pov">🎬 POV</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -409,6 +458,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://www.suara.com/lifestyle/2026/05/26/092128/mas-bahlil-ganteng-itu-siapa-viral-lagu-mbg-di-tiktok" target="_blank">📰 Suara.com</a>
                   <a class="meme-link" href="https://www.tiktok.com/search?q=bocah%20MBG%20buahlil" target="_blank">🎵 TikTok</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag street">🎤 街访</span>
+                    <span class="creative-tag skit">🎭 情景剧</span>
+                    <span class="creative-tag pov">🎬 POV</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -526,6 +583,14 @@
                   <a class="meme-link" href="https://www.tiktok.com/search?q=Senate%20Run%20Bato" target="_blank">🎵 TikTok</a>
                   <a class="meme-link" href="https://philstarlife.com/news-and-views/305199-bato-dela-rosa-viral-senate-chase" target="_blank">📰 PhilSTAR</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag challenge">💃 挑战赛</span>
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag skit">🎭 情景剧</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -542,6 +607,14 @@
                   <a class="meme-link" href="https://tribune.net.ph/2026/05/28/minority-walkout-sparks-frenzy-online" target="_blank">📰 Tribune</a>
                   <a class="meme-link" href="https://x.com/search?q=Maleta%20Gang" target="_blank">🐦 X</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag carousel">📸 图文轮播</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -556,6 +629,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://www.pep.ph/news/local/192285/ces-drilon-jimmy-bondoc-heated-interview-a734-a712-20260521-lfrm" target="_blank">📰 PEP.ph</a>
                   <a class="meme-link" href="https://x.com/search?q=Stress%20Drilon" target="_blank">🐦 X</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag pov">🎬 POV</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -659,6 +740,14 @@
                   <a class="meme-link" href="https://www.latestly.com/social-viral/influencer-chin-pui-tings-viral-klia-parking-complaint-over-fee-hike-everything-you-need-to-know-7439956.html" target="_blank">📰 LatestLY</a>
                   <a class="meme-link" href="https://www.tiktok.com/search?q=KLIA%20parking%20deadpudds" target="_blank">🎵 TikTok</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag street">🎤 街访</span>
+                    <span class="creative-tag pov">🎬 POV</span>
+                    <span class="creative-tag story">📖 故事叙述</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -675,6 +764,14 @@
                   <a class="meme-link" href="https://thesun.my/going-viral/teacher-bans-students-from-enacting-six-seven-meme-in-class/" target="_blank">📰 The Sun MY</a>
                   <a class="meme-link" href="https://en.wikipedia.org/wiki/6-7_(meme)" target="_blank">📖 Wikipedia</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag challenge">💃 挑战赛</span>
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag skit">🎭 情景剧</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -689,6 +786,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://www.reddit.com/r/malaysia/" target="_blank">💬 Reddit</a>
                   <a class="meme-link" href="https://www.tiktok.com/search?q=Family%20Mart%20curry%20Malaysia" target="_blank">🎵 TikTok</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag pov">🎬 POV</span>
+                    <span class="creative-tag story">📖 故事叙述</span>
+                    <span class="creative-tag skit">🎭 情景剧</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -801,6 +906,14 @@
                   <a class="meme-link" href="https://whatsonsaudiarabia.com/2026/05/kfc-reveals-saudi-arabias-viral-chicken-head-trio/" target="_blank">📰 What&rsquo;s On Saudi</a>
                   <a class="meme-link" href="https://destinationksa.com/en/those-kentaaky-guys/" target="_blank">📰 DestinationKSA</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag skit">🎭 情景剧</span>
+                    <span class="creative-tag pov">🎬 POV</span>
+                    <span class="creative-tag meme">😂 Meme</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -815,6 +928,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://lovin.co/riyadh/en/news/saudi-tiktok-said-lets-make-it-iconic-and-dropped-horses-and-swords/" target="_blank">📰 Lovin Riyadh</a>
                   <a class="meme-link" href="https://www.tiktok.com/search?q=Saudi%20horse%20sword%20Jungkook" target="_blank">🎵 TikTok</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag challenge">💃 挑战赛</span>
+                    <span class="creative-tag bgm">🎵 BGM卡点</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -831,6 +952,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://x.com/search?q=%23الغيبوبه_الجماعيه" target="_blank">🐦 X</a>
                   <a class="meme-link" href="https://www.tiktok.com/search?q=الغيبوبه_الجماعيه" target="_blank">🎵 TikTok</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag pov">🎬 POV</span>
+                    <span class="creative-tag skit">🎭 情景剧</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -931,6 +1060,14 @@
                   <a class="meme-link" href="https://arabitrend.com/2026/05/24/%D8%A8%D8%B9%D8%AF-%D8%A3%D8%B2%D9%85%D8%A9-%D8%A7%D9%84%D8%AC%D9%84%D8%A8%D8%A7%D8%A8-%D8%A7%D9%84%D8%B5%D8%B9%D9%8A%D8%AF%D9%8A-%D9%85%D8%AD%D9%85%D8%AF-%D8%B1%D9%85%D8%B6%D8%A7%D9%86-%D9%8A%D8%B7/" target="_blank">📰 ArabiTrend</a>
                   <a class="meme-link" href="https://www.tiktok.com/search?q=%D8%AA%D8%AD%D8%AF%D9%8A_%D8%A7%D9%84%D9%85%D9%84%D9%8A%D9%88%D9%86_%D8%AC%D9%84%D8%A7%D8%A8%D9%8A%D8%A9" target="_blank">🎵 TikTok</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag challenge">💃 挑战赛</span>
+                    <span class="creative-tag ugc">🏷️ UGC征集</span>
+                    <span class="creative-tag bgm">🎵 BGM卡点</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -947,6 +1084,14 @@
                   <a class="meme-link" href="https://www.youtube.com/results?search_query=%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9+%D8%AD%D9%85%D8%A7%D9%82%D9%8A+%D8%B4%D9%8A%D8%B1%D9%8A%D9%86" target="_blank">▶️ YouTube</a>
                   <a class="meme-link" href="https://gate.ahram.org.eg/News/5662369.aspx" target="_blank">📰 Al-Ahram</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag bgm">🎵 BGM卡点</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                    <span class="creative-tag livestream">📺 直播切片</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -962,6 +1107,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://x.com/search?q=%23العجول_الهربانه" target="_blank">🐦 X</a>
                   <a class="meme-link" href="https://www.tiktok.com/search?q=العجول_الهربانه" target="_blank">🎵 TikTok</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag pov">🎬 POV</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1067,6 +1220,14 @@
                   <a class="meme-link" href="https://www.kanal6haber.com/bayramin-en-cok-konusulan-kurbanligi-osimhen-fenerbahceyi-duyunca-cildirdi" target="_blank">📰 Kanal 6</a>
                   <a class="meme-link" href="https://x.com/search?q=kurbanl%C4%B1k%20Osimhen" target="_blank">🐦 X</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                    <span class="creative-tag skit">🎭 情景剧</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -1083,6 +1244,14 @@
                   <a class="meme-link" href="https://www.memesita.com/court-reinstates-kilicdaroglu-as-chp-leader-stripping-istanbul-izmir-of-facebook-control/" target="_blank">📰 Memesita</a>
                   <a class="meme-link" href="https://x.com/search?q=CHP%20Facebook" target="_blank">🐦 X</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag carousel">📸 图文轮播</span>
+                    <span class="creative-tag story">📖 故事叙述</span>
+                    <span class="creative-tag meme">😂 Meme</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -1097,6 +1266,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://x.com/search?q=Kurban%20Bayram%C4%B1%20mesaj" target="_blank">🐦 X</a>
                   <a class="meme-link" href="https://www.tiktok.com/search?q=Kurban%20Bayramı" target="_blank">🎵 TikTok</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag ai-voice">🤖 AI配音</span>
+                    <span class="creative-tag carousel">📸 图文轮播</span>
+                    <span class="creative-tag challenge">💃 挑战赛</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1185,6 +1362,14 @@
                   <a class="meme-link" href="https://www.khaleejtimes.com/uae/toddler-visits-dubai-landmarks-viral-video-thanks-sheikh-hamdan" target="_blank">📰 Khaleej Times</a>
                   <a class="meme-link" href="https://curlytales.com/middle-east/ct-scoop/sheikh-hamdan-makes-kenyan-childs-dream-dubai-trip-come-true-after-viral-clip/" target="_blank">📰 Curly Tales</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag pov">🎬 POV</span>
+                    <span class="creative-tag story">📖 故事叙述</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -1201,6 +1386,14 @@
                   <a class="meme-link" href="https://gulfnews.com/uae/people/video-of-michael-jackson-drone-show-at-dubais-burj-khalifa-goes-viral-heres-the-real-story-1.500543532" target="_blank">📰 Gulf News</a>
                   <a class="meme-link" href="https://www.tiktok.com/search?q=Michael%20Jackson%20drone%20Dubai" target="_blank">🎵 TikTok</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag ai-voice">🤖 AI配音</span>
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag story">📖 故事叙述</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -1215,6 +1408,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://www.gulftoday.ae/news/2026/05/24/uae-residents-praise-talabat-rider-who-stopped-to-move-dead-cat-from-dubai-road" target="_blank">📰 Gulf Today</a>
                   <a class="meme-link" href="https://x.com/search?q=Talabat%20rider%20cat%20Dubai" target="_blank">🐦 X</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag pov">🎬 POV</span>
+                    <span class="creative-tag story">📖 故事叙述</span>
+                    <span class="creative-tag skit">🎭 情景剧</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1290,6 +1491,14 @@
                   <a class="meme-link" href="https://www.cnn.com/2026/04/15/world/video/ai-generated-videos-us-iran-meme-war-will-ripley-hnk-vrtc-digvid" target="_blank">📰 CNN</a>
                   <a class="meme-link" href="https://allaccessinsider.com/iran-mocks-trump-with-viral-buffalo-lookalike" target="_blank">📰 All Access Insider</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag ai-voice">🤖 AI配音</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -1305,6 +1514,14 @@
                   <a class="meme-link" href="https://x.com/search?q=عيد%20حزين%20عراق" target="_blank">🐦 X</a>
                   <a class="meme-link" href="https://www.reddit.com/r/iraq/" target="_blank">💬 Reddit</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag pov">🎬 POV</span>
+                    <span class="creative-tag story">📖 故事叙述</span>
+                    <span class="creative-tag street">🎤 街访</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -1319,6 +1536,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://www.youtube.com/results?search_query=ماين+كرافت+عراقي" target="_blank">▶️ YouTube</a>
                   <a class="meme-link" href="https://www.tiktok.com/search?q=Minecraft%20عراقي" target="_blank">🎵 TikTok</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag livestream">📺 直播切片</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                    <span class="creative-tag bgm">🎵 BGM卡点</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1417,6 +1642,14 @@
                   <a class="meme-link" href="https://en.dailypakistan.com.pk/27-May-2026/wasim-akram-clean-bowled-satan-during-hajj-ritual-video-goes-viral" target="_blank">📰 Daily Pakistan</a>
                   <a class="meme-link" href="https://x.com/search?q=Wasim%20Akram%20Hajj" target="_blank">🐦 X</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag pov">🎬 POV</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -1433,6 +1666,14 @@
                   <a class="meme-link" href="https://www.brandsynario.com/cockroach-awami-party-pakistan/" target="_blank">📰 Brandsynario</a>
                   <a class="meme-link" href="https://x.com/search?q=Cockroach%20Awami%20Party" target="_blank">🐦 X</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag ugc">🏷️ UGC征集</span>
+                    <span class="creative-tag challenge">💃 挑战赛</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -1448,6 +1689,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://bloompakistan.com/wasim-akrams-jamarat-ritual-video-goes-viral/" target="_blank">📰 Bloom Pakistan</a>
                   <a class="meme-link" href="https://x.com/search?q=Wasim%20Akram%20Hajj%20Misbah" target="_blank">🐦 X</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag carousel">📸 图文轮播</span>
+                    <span class="creative-tag story">📖 故事叙述</span>
+                    <span class="creative-tag pov">🎬 POV</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1553,6 +1802,14 @@
                   <a class="meme-link" href="https://economictimes.indiatimes.com/news/economy/policy/cockroach-janta-party-how-an-insect-jibe-united-indias-disgruntled-jobless-youth/articleshow/131271889.cms" target="_blank">📰 Economic Times</a>
                   <a class="meme-link" href="https://indianexpress.com/article/political-pulse/cockroach-janta-party-swatted-away-parties-gen-z-discontent-10713394/" target="_blank">📰 Indian Express</a>
                 </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag challenge">💃 挑战赛</span>
+                    <span class="creative-tag ugc">🏷️ UGC征集</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="meme-card">
@@ -1567,6 +1824,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://www.indiatvnews.com/trending/news/clock-it-delhi-police-turns-viral-meme-trend-into-internet-safety-lesson-2026-05-21-1041930" target="_blank">📰 India TV</a>
                   <a class="meme-link" href="https://x.com/search?q=Delhi%20Police%20ClockIt" target="_blank">🐦 X</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag challenge">💃 挑战赛</span>
+                    <span class="creative-tag bgm">🎵 BGM卡点</span>
+                    <span class="creative-tag meme">😂 Meme</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1583,6 +1848,14 @@
                 <div class="meme-links">
                   <a class="meme-link" href="https://indianexpress.com/article/india/cockroach-janta-party-vs-oggy-janta-party-internet-political-battle-10702750/" target="_blank">📰 Indian Express</a>
                   <a class="meme-link" href="https://x.com/search?q=Oggy%20Janata%20Party" target="_blank">🐦 X</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">🎬 素材灵感</div>
+                  <div class="creative-suggest-tags">
+                    <span class="creative-tag meme">😂 Meme</span>
+                    <span class="creative-tag skit">🎭 情景剧</span>
+                    <span class="creative-tag reaction">🔄 二创/Reaction</span>
+                  </div>
                 </div>
               </div>
             </div>
