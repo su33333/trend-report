@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>地区热点周报 — 2026.05.26–06.01</title>
+<title>地区热点周报 — 2026.06.02–06.08</title>
 <style>
   :root {
     --sea-color: #10B981; --sea-bg: #ECFDF5; --sea-border: #A7F3D0;
@@ -56,19 +56,6 @@
   .summary-card .number { font-size: 36px; font-weight: 800; background: linear-gradient(135deg, var(--gray-900), var(--gray-700)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .summary-card .label { font-size: 13px; color: var(--gray-500); margin-top: 4px; font-weight: 500; }
 
-  .heatmap-section { background: white; border-radius: var(--radius); box-shadow: var(--shadow); padding: 24px; margin-bottom: 32px; }
-  .heatmap-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
-  .heatmap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .heatmap-group-label { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
-  .heatmap-countries { display: flex; flex-direction: column; gap: 8px; }
-  .heatmap-card { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: var(--gray-50); border-radius: 8px; }
-  .heatmap-flag { font-size: 18px; flex-shrink: 0; }
-  .heatmap-country-name { font-size: 12px; font-weight: 600; width: 50px; flex-shrink: 0; }
-  .heatmap-bar { flex: 1; height: 8px; background: var(--gray-100); border-radius: 4px; overflow: hidden; }
-  .heatmap-fill { height: 100%; border-radius: 4px; transition: width .6s ease; }
-  .heatmap-score { font-size: 11px; flex-shrink: 0; width: 70px; text-align: right; }
-  @media (max-width: 768px) { .heatmap-grid { grid-template-columns: 1fr; } }
-
   .region-section { margin-bottom: 40px; }
   .region-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 3px solid var(--gray-200); }
   .region-header .region-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 20px; font-size: 14px; font-weight: 600; color: white; }
@@ -115,9 +102,8 @@
   .tag.new { background: #DBEAFE; color: #1E40AF; }
 
   .meme-grid { display: flex; flex-direction: column; gap: 10px; }
-  .meme-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 12px; display: flex; gap: 12px; }
-  .meme-thumb { width: 64px; height: 64px; border-radius: 8px; background: var(--gray-100); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 24px; }
-  .meme-card-content { flex: 1; min-width: 0; }
+  .meme-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; padding: 12px; }
+  .meme-card-content { min-width: 0; }
   .meme-card .meme-name { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
   .meme-card .meme-desc { font-size: 12px; color: var(--gray-500); line-height: 1.4; }
   .meme-stats { display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
@@ -135,7 +121,7 @@
   .creative-suggest-label { font-size: 11px; font-weight: 700; color: #1E40AF; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
   .creative-suggest-list { list-style: none; margin: 0; padding: 0; }
   .creative-suggest-list li { font-size: 12px; color: var(--gray-700); line-height: 1.5; padding: 3px 0; padding-left: 16px; position: relative; }
-  .creative-suggest-list li::before { content: '▸'; position: absolute; left: 2px; color: #3B82F6; font-weight: 700; }
+  .creative-suggest-list li::before { content: '\25B8'; position: absolute; left: 2px; color: #3B82F6; font-weight: 700; }
   .creative-suggest-list li strong { color: #1E40AF; font-weight: 700; }
 
   .calendar-list { list-style: none; }
@@ -200,7 +186,6 @@
 
   .report-footer { text-align: center; padding: 32px; color: var(--gray-500); font-size: 12px; border-top: 1px solid var(--gray-200); margin-top: 40px; }
 
-  /* Dark mode */
   body.dark-mode { background: #0F172A; color: #E2E8F0; }
   body.dark-mode .sticky-nav { background: #1E293B; border-color: #334155; }
   body.dark-mode .nav-link { background: #334155; color: #CBD5E1; }
@@ -227,78 +212,52 @@
   body.dark-mode .creative-table { border-color: #334155; }
   body.dark-mode .creative-table th { background: #0F172A; color: #CBD5E1; border-color: #334155; }
   body.dark-mode .creative-table td { border-color: #334155; color: #CBD5E1; }
-  body.dark-mode .warning-box { background: #1C1917; border-color: #7F1D1D; }
-  body.dark-mode .warning-box h4 { color: #FCA5A5; }
-  body.dark-mode .warning-box li { color: #FECACA; }
-  body.dark-mode .cross-region { background: #1E293B; border-color: #334155; }
+  body.dark-mode .creative-suggest { background: linear-gradient(135deg, #1E293B, #1E3A5F); border-color: #334155; }
+  body.dark-mode .creative-suggest-label { color: #93C5FD; }
+  body.dark-mode .creative-suggest-list li { color: #CBD5E1; }
+  body.dark-mode .cross-region { background: #1E293B; box-shadow: 0 1px 3px rgba(0,0,0,.3); border-color: #475569; }
   body.dark-mode .cross-region li { border-color: #334155; color: #CBD5E1; }
   body.dark-mode .brief-card { background: #1E293B; border-color: #334155; }
   body.dark-mode .brief-body { color: #CBD5E1; }
-  body.dark-mode .brief-field-label { color: #94A3B8; }
   body.dark-mode .brief-field-value { color: #CBD5E1; }
   body.dark-mode .brief-footer { background: #0F172A; border-color: #334155; }
-  body.dark-mode .region-header { border-color: #334155; }
-  body.dark-mode .region-header h2 { color: #E2E8F0; }
-  body.dark-mode .report-footer { color: #64748B; border-color: #334155; }
-  body.dark-mode .heatmap-card { background: #1E293B; }
-  body.dark-mode .heatmap-country-name { color: #CBD5E1; }
-  body.dark-mode .back-to-top { background: #6366F1; }
-  body.dark-mode .tag.platform { background: #1E3A5F; color: #93C5FD; }
-  body.dark-mode .tag.heat { background: #422006; color: #FCD34D; }
-  body.dark-mode .meme-stat.views { background: #422006; color: #FCD34D; }
-  body.dark-mode .meme-stat.likes { background: #831843; color: #F9A8D4; }
-  body.dark-mode .meme-stat.comments { background: #1E3A5F; color: #93C5FD; }
-  body.dark-mode .meme-stat.trending { background: #064E3B; color: #6EE7B7; }
-  body.dark-mode .meme-stat.followers { background: #2E1065; color: #C4B5FD; }
-  body.dark-mode .meme-link { background: #1E3A5F; color: #93C5FD; }
-  body.dark-mode .copy-btn { background: #334155; color: #CBD5E1; border-color: #475569; }
-  body.dark-mode .creative-suggest { background: linear-gradient(135deg, #0F172A, #172554); border-color: #1E3A5F; }
-  body.dark-mode .creative-suggest-label { color: #93C5FD; }
-  body.dark-mode .creative-suggest-list li { color: #CBD5E1; }
-  body.dark-mode .creative-suggest-list li::before { color: #60A5FA; }
-  body.dark-mode .creative-suggest-list li strong { color: #93C5FD; }
-  body.dark-mode .heatmap-section { background: #1E293B; }
+  body.dark-mode .warning-box { background: #450A0A; border-color: #7F1D1D; }
+  body.dark-mode .warning-box li { color: #FCA5A5; }
+  body.dark-mode .report-footer { border-color: #334155; color: #64748B; }
 
-  @media print {
-    .header { padding: 24px; }
-    .country-card.collapsed .country-body { display: block !important; }
-    .country-body { max-height: none !important; overflow: visible !important; }
-    body { background: white; }
-    .country-card, .cross-region, .brief-card { break-inside: avoid; }
-    .sticky-nav { position: static; }
-    .back-to-top { display: none !important; }
+  @media (max-width: 768px) {
+    .summary-strip { grid-template-columns: repeat(2, 1fr); }
+    .country-grid { grid-template-columns: 1fr; }
+    .brief-grid { grid-template-columns: 1fr; }
   }
-  @media (max-width: 1024px) { .country-grid { grid-template-columns: 1fr; } .brief-grid { grid-template-columns: 1fr; } }
-  @media (max-width: 768px) { .container { padding: 16px 12px; } .header { padding: 24px 16px; } .header h1 { font-size: 22px; } .summary-strip { grid-template-columns: repeat(2, 1fr); } .country-grid { grid-template-columns: 1fr; } .country-body { max-height: none; } }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>🌏 地区热点周报</h1>
-  <div class="subtitle">Regional Trend Monitor &mdash; Weekly Dashboard</div>
+  <h1>Regional Trend Monitor &mdash; 地区热点周报</h1>
+  <div class="subtitle">覆盖东南亚、中东、南亚 10 个市场的实时网络热点与病毒内容追踪</div>
   <div class="meta">
-    <span>📅 2026.05.26 &ndash; 06.01</span>
-    <span>🌍 10 个国家/地区</span>
-    <span>📊 为 Xena 广告团队定制</span>
+    <span>&#128197; 2026.06.02 &ndash; 06.08</span>
+    <span>&#127760; 10 个国家/地区</span>
+    <span>&#128241; 8 个社交平台</span>
+    <span>&#9200; 更新于 2026-06-02 12:00 CST</span>
   </div>
 </div>
 
-<nav class="sticky-nav" id="stickyNav">
+<nav class="sticky-nav">
   <div class="nav-inner">
     <div class="nav-links">
-      <a href="#region-sea" class="nav-link sea-link">🌴 东南亚</a>
-      <a href="#region-mena" class="nav-link mena-link">🏜️ 中东</a>
-      <a href="#region-sa" class="nav-link sa-link">🏔️ 南亚</a>
-      <a href="#cross-region" class="nav-link">🔗 跨区域</a>
-      <a href="#briefs" class="nav-link">✨ Brief卡片</a>
+      <a class="nav-link sea-link" href="#sea-section">&#127470;&#127465; &#127477;&#127469; &#127474;&#127486; 东南亚</a>
+      <a class="nav-link mena-link" href="#mena-section">&#127480;&#127462; &#127466;&#127468; &#127481;&#127479; &#127462;&#127466; &#127470;&#127478; 中东</a>
+      <a class="nav-link sa-link" href="#sa-section">&#127477;&#127472; &#127470;&#127475; 南亚</a>
+      <a class="nav-link" href="#cross-region">&#127760; 跨区域趋势</a>
+      <a class="nav-link" href="#brief-section">&#128161; Creative Briefs</a>
     </div>
     <div class="nav-actions">
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="🔍 搜索热点/国家..." oninput="handleSearch(this.value)">
-      </div>
-      <button class="nav-btn" id="toggleAllBtn" onclick="toggleAll()">📂 全部展开</button>
-      <button class="nav-btn" id="darkModeBtn" onclick="toggleDarkMode()">🌙 深色模式</button>
+      <div class="search-box"><input type="text" placeholder="搜索关键词..." oninput="handleSearch(this.value)"></div>
+      <button class="nav-btn" id="toggleAllBtn" onclick="toggleAll()">&#128193; 全部收起</button>
+      <button class="nav-btn" id="darkModeBtn" onclick="toggleDarkMode()">&#127769; 深色模式</button>
     </div>
   </div>
 </nav>
@@ -306,202 +265,95 @@
 <div class="container">
 
 <div class="summary-strip">
-  <div class="summary-card"><div class="summary-icon">🔥</div><div class="number">46</div><div class="label">本周热点话题</div></div>
-  <div class="summary-card"><div class="summary-icon">🎭</div><div class="number">38+</div><div class="label">热梗 / 病毒内容</div></div>
-  <div class="summary-card"><div class="summary-icon">📅</div><div class="number">30+</div><div class="label">近期文化事件</div></div>
-  <div class="summary-card"><div class="summary-icon">🌍</div><div class="number">10</div><div class="label">覆盖市场</div></div>
+  <div class="summary-card"><div class="summary-icon">&#128293;</div><div class="number">50</div><div class="label">热门话题</div></div>
+  <div class="summary-card"><div class="summary-icon">&#127775;</div><div class="number">34</div><div class="label">病毒热梗</div></div>
+  <div class="summary-card"><div class="summary-icon">&#128197;</div><div class="number">18</div><div class="label">文化日历</div></div>
+  <div class="summary-card"><div class="summary-icon">&#128161;</div><div class="number">6</div><div class="label">Creative Briefs</div></div>
 </div>
 
-<div class="heatmap-section">
-  <div class="heatmap-title">📊 本周各市场热度指数</div>
-  <div class="heatmap-grid">
-    <div>
-      <div class="heatmap-group-label" style="color:var(--sea-color)">🌴 东南亚</div>
-      <div class="heatmap-countries">
-        <div class="heatmap-card"><span class="heatmap-flag">🇮🇩</span><span class="heatmap-country-name">印尼</span><div class="heatmap-bar"><div class="heatmap-fill" style="width:95%;background:var(--sea-color)"></div></div><span class="heatmap-score">MBG 55.6M</span></div>
-        <div class="heatmap-card"><span class="heatmap-flag">🇵🇭</span><span class="heatmap-country-name">菲律宾</span><div class="heatmap-bar"><div class="heatmap-fill" style="width:88%;background:var(--sea-color)"></div></div><span class="heatmap-score">Senate Run</span></div>
-        <div class="heatmap-card"><span class="heatmap-flag">🇲🇾</span><span class="heatmap-country-name">马来</span><div class="heatmap-bar"><div class="heatmap-fill" style="width:78%;background:var(--sea-color)"></div></div><span class="heatmap-score">U16禁令</span></div>
-      </div>
-    </div>
-    <div>
-      <div class="heatmap-group-label" style="color:var(--mena-color)">🏜️ 中东</div>
-      <div class="heatmap-countries">
-        <div class="heatmap-card"><span class="heatmap-flag">🇸🇦</span><span class="heatmap-country-name">沙特</span><div class="heatmap-bar"><div class="heatmap-fill" style="width:90%;background:var(--mena-color)"></div></div><span class="heatmap-score">Hajj+KFC</span></div>
-        <div class="heatmap-card"><span class="heatmap-flag">🇪🇬</span><span class="heatmap-country-name">埃及</span><div class="heatmap-bar"><div class="heatmap-fill" style="width:85%;background:var(--mena-color)"></div></div><span class="heatmap-score">法老WC</span></div>
-        <div class="heatmap-card"><span class="heatmap-flag">🇹🇷</span><span class="heatmap-country-name">土耳其</span><div class="heatmap-bar"><div class="heatmap-fill" style="width:82%;background:var(--mena-color)"></div></div><span class="heatmap-score">鸽子13.1M</span></div>
-        <div class="heatmap-card"><span class="heatmap-flag">🇦🇪</span><span class="heatmap-country-name">阿联酋</span><div class="heatmap-bar"><div class="heatmap-fill" style="width:75%;background:var(--mena-color)"></div></div><span class="heatmap-score">机器人礼拜</span></div>
-        <div class="heatmap-card"><span class="heatmap-flag">🇮🇶</span><span class="heatmap-country-name">伊拉克</span><div class="heatmap-bar"><div class="heatmap-fill" style="width:65%;background:var(--mena-color)"></div></div><span class="heatmap-score">敏感话题</span></div>
-      </div>
-    </div>
-    <div>
-      <div class="heatmap-group-label" style="color:var(--sa-color)">🏔️ 南亚</div>
-      <div class="heatmap-countries">
-        <div class="heatmap-card"><span class="heatmap-flag">🇮🇳</span><span class="heatmap-country-name">印度</span><div class="heatmap-bar"><div class="heatmap-fill" style="width:92%;background:var(--sa-color)"></div></div><span class="heatmap-score">CJP 190M</span></div>
-        <div class="heatmap-card"><span class="heatmap-flag">🇵🇰</span><span class="heatmap-country-name">巴基斯坦</span><div class="heatmap-bar"><div class="heatmap-fill" style="width:80%;background:var(--sa-color)"></div></div><span class="heatmap-score">CAP+Hajj</span></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ==================== REGION: SOUTHEAST ASIA ==================== -->
-<div class="region-section" id="region-sea">
+<!-- ==================== SOUTHEAST ASIA ==================== -->
+<div class="region-section" id="sea-section">
   <div class="region-header">
-    <span class="region-tag sea">🌴 东南亚</span>
-    <h2>Southeast Asia</h2>
+    <span class="region-tag sea">&#127796; 东南亚</span>
+    <h2>Indonesia &middot; Philippines &middot; Malaysia</h2>
   </div>
   <div class="country-grid">
 
-    <!-- === Indonesia === -->
+    <!-- INDONESIA -->
     <div class="country-card sea">
-      <div class="country-title" onclick="this.parentElement.classList.toggle('collapsed')">
-        <span class="flag">🇮🇩</span>
-        <h3>印尼 Indonesia</h3>
-        <span class="toggle">▼</span>
-      </div>
+      <div class="country-title"><span class="flag">&#127470;&#127465;</span><h3>Indonesia</h3><span class="toggle">&#9660;</span></div>
       <div class="country-body">
         <div class="sub-section">
-          <h4>🔥 本周热点 Top 5</h4>
+          <h4>&#128293; Top 5 热门话题</h4>
           <ul class="trend-list">
-            <li class="trend-item">
-              <span class="trend-rank hot">1</span>
-              <div class="trend-content">
-                <div class="trend-name">MBG &ldquo;Mas Bahlil Ganteng&rdquo; / My Little Bolu Ketan</div>
-                <div class="trend-desc">AI生成搞笑歌曲恶搞能矿部长Bahlil，原版17.8M播放/1.1M赞；Sania Leonardo翻拍55.6M播放/4.2M赞。Jokowi、Raffi Ahmad加入传播。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">Instagram</span><span class="tag platform">X</span><span class="tag heat">🔥🔥🔥 55.6M播放</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank hot">2</span>
-              <div class="trend-content">
-                <div class="trend-name">Lu Kenal Veronika Ko?</div>
-                <div class="trend-desc">NTT喜剧演员Verry Klau创作的AI辅助搞笑歌曲，&ldquo;Bluetooth device has connected successfully&rdquo;成全网punchline。Marion Jola等明星翻拍。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">YouTube</span><span class="tag platform">Instagram</span><span class="tag heat">🔥🔥🔥 Google热搜</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">3</span>
-              <div class="trend-content">
-                <div class="trend-name">Timnas Indonesia FIFA Matchday</div>
-                <div class="trend-desc">印尼国家队6月5日和9日在GBK主场迎战阿曼和莫桑比克，教练John Herdman公布23人名单引发热议。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">YouTube</span><span class="tag heat">🔥🔥</span><span class="tag rising">📈 上升中</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">4</span>
-              <div class="trend-content">
-                <div class="trend-name">MPL Indonesia Season 17 Playoffs</div>
-                <div class="trend-desc">MLBB职业联赛6/10&ndash;14季后赛，奖金池48.6亿印尼盾，ONIC领跑，RRQ淘汰成重大新闻。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">YouTube</span><span class="tag heat">🔥🔥</span><span class="tag rising">📈 上升中</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">5</span>
-              <div class="trend-content">
-                <div class="trend-name">Hari Lahir Pancasila &amp; Long Weekend</div>
-                <div class="trend-desc">6月1日国定假日，与5月31日佛诞节形成3天长周末，全民关注。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Instagram</span><span class="tag heat">🔥🔥</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
+            <li class="trend-item"><span class="trend-rank hot">1</span><div class="trend-content"><div class="trend-name">#TREASURE_NEW_WAV</div><div class="trend-desc">韩国男团TREASURE发布新专辑NEW WAV，粉丝刷屏庆祝</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">933分</span><span class="tag peak">&#128308; 峰值 19h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank hot">2</span><div class="trend-content"><div class="trend-name">#SjafrieSAfiekalla</div><div class="trend-desc">印尼政治人物Sjafrie Sjamsoeddin相关话题引发讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">730分</span><span class="tag peak">&#128308; 峰值 17h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">3</span><div class="trend-content"><div class="trend-name">#ASEANBoysChampionship</div><div class="trend-desc">东盟男子足球锦标赛激战，印尼队首日登场</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">492分</span><span class="tag rising">&#9650; 上升中</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">4</span><div class="trend-content"><div class="trend-name">#PerlindunganDigital</div><div class="trend-desc">印尼数字保护法规讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">309分</span><span class="tag new">NEW</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">5</span><div class="trend-content"><div class="trend-name">#MenkoPangan</div><div class="trend-desc">粮食协调部长相关新闻</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">257分</span><span class="tag new">NEW</span></div></div></li>
           </ul>
         </div>
         <div class="sub-section">
-          <h4>🎭 热梗 / 病毒内容</h4>
+          <h4>&#127775; 热梗 / 病毒内容</h4>
           <div class="meme-grid">
             <div class="meme-card">
-              <div class="meme-thumb">🎵</div>
               <div class="meme-card-content">
-                <div class="meme-name">MBG / My Little Bolu Ketan</div>
-                <div class="meme-desc">&ldquo;Buah apa yang paling manis? BUAHLIL!&rdquo; 由@vokaliz_netizen用AI生成的歌曲，Sania Leonardo reaction视频引爆传播，连前总统Jokowi都加入潮流。Golkar党回应&ldquo;网民对Bahlil工作的认可&rdquo;。</div>
+                <div class="meme-name">MBG &mdash; Mas Bahlil Ganteng (AI神曲)</div>
+                <div class="meme-desc">AI生成的歌曲，歌词取自网友对能源部长Bahlil的搞笑评论。Jokowi也加入finger heart跳舞，全网刷屏</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 55.6M 播放(翻拍)</span>
-                  <span class="meme-stat likes">❤️ 4.2M 赞</span>
-                  <span class="meme-stat views">👁️ 17.8M 播放(原创)</span>
+                  <span class="meme-stat views">&#128065; 48.3M播放</span>
+                  <span class="meme-stat likes">&#10084; 3.9M赞</span>
+                  <span class="meme-stat trending">&#128293; 持续霸榜</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.suara.com/lifestyle/2026/05/26/092128/mas-bahlil-ganteng-itu-siapa-viral-lagu-mbg-di-tiktok" target="_blank">📰 Suara.com</a>
-                  <a class="meme-link" href="https://www.cnnindonesia.com/teknologi/20260526132423-192-1362506/cara-bikin-lagu-ai-seperti-mbg-mas-bahlil-ganteng-yang-viral-di-tiktok" target="_blank">📰 CNN ID</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=MBG%20Mas%20Bahlil%20Ganteng" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://www.youtube.com/results?search_query=MBG+Mas+Bahlil+Ganteng" target="_blank">▶️ YouTube</a>
+                  <a href="https://www.tiktok.com/search?q=mas%20bahlil%20ganteng" target="_blank" class="meme-link">TikTok搜索</a>
+                  <a href="https://www.cnnindonesia.com/teknologi/20260526132423-192-1362506/cara-bikin-lagu-ai-seperti-mbg-mas-bahlil-ganteng-yang-viral-di-tiktok" target="_blank" class="meme-link">CNN Indonesia</a>
+                  <a href="https://news.detik.com/berita/d-8512779/jokowi-ikut-tren-mas-bahlil-ganteng-golkar-beliau-warganet" target="_blank" class="meme-link">Detik</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>对唱:</strong> 主播唱MBG改编版夸观众帅/美</li>
-                    <li><strong>挑战:</strong> 直播间挑战&ldquo;用Bahlil谐音造句&rdquo;</li>
-                    <li><strong>社交:</strong> 视频通话对唱My Little Bolu Ketan</li>
+                    <li><strong>UGC歌曲挑战：</strong>鼓励用户在Xena直播间用AI将聊天评论变成歌曲，类似MBG的&ldquo;评论变歌词&rdquo;玩法</li>
+                    <li><strong>Finger Heart互动：</strong>制作Xena版finger heart特效贴纸，绑定&ldquo;在Xena找到你的ganteng/cantik&rdquo;话题</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">📶</div>
               <div class="meme-card-content">
-                <div class="meme-name">Lu Kenal Veronika Ko?</div>
-                <div class="meme-desc">东印尼方言歌曲讲述&ldquo;忘本女孩&rdquo;故事，高潮是男主大喊&ldquo;Bluetooth device has connected successfully&rdquo;成为全网梗。与Ecko Show合作发布正式版。</div>
+                <div class="meme-name">TREASURE &ldquo;IF I&rdquo; MV 全球发布</div>
+                <div class="meme-desc">TREASURE新专辑NEW WAV主打曲MV上线，印尼、菲律宾、马来三国同时霸榜YouTube trending第一</div>
                 <div class="meme-stats">
-                  <span class="meme-stat trending">🔥 Google热搜</span>
-                  <span class="meme-stat views">👁️ 百万级传播</span>
+                  <span class="meme-stat views">&#128065; YouTube Trending #1</span>
+                  <span class="meme-stat trending">&#128293; 跨3国霸榜</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.idntimes.com/hype/viral/asal-usul-lagu-lu-kenal-veronika-ko-dan-makna-lirik-lagunya-00-sd4vv-5gfsc7" target="_blank">📰 IDN Times</a>
-                  <a class="meme-link" href="https://news.fin.co.id/2026/04/25/auto-nyanyi-lirik-lu-kenal-veronika-ko-viral-tiktok-ini-cerita-aslinya" target="_blank">📰 Fin.co.id</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Lu%20Kenal%20Veronika%20Ko" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://www.youtube.com/results?search_query=Lu+Kenal+Veronika+Ko" target="_blank">▶️ YouTube</a>
+                  <a href="https://www.youtube.com/results?search_query=TREASURE+IF+I+MV" target="_blank" class="meme-link">YouTube搜索</a>
+                  <a href="https://yt-trends.sarojmeher.com/indonesia" target="_blank" class="meme-link">YT趋势榜</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>模板:</strong> &ldquo;Lu kenal XX ko?&rdquo;模板介绍Xena好友</li>
-                    <li><strong>PK:</strong> 直播间PK模仿Bluetooth语音梗</li>
-                    <li><strong>搞笑:</strong> 用东印尼口音搞笑自我介绍开播</li>
+                    <li><strong>K-pop粉丝聚会：</strong>Xena直播间做TREASURE新歌打歌会/reaction直播，吸引东南亚K-pop粉丝</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">👻</div>
               <div class="meme-card-content">
-                <div class="meme-name">Pocong Kediri被妈妈骂</div>
-                <div class="meme-desc">15岁少年穿白布扮pocong（裹尸鬼）吓人骑摩托巡游，被抓后母亲当众怒骂，&ldquo;pocong&rdquo;一动不动站着挨骂的视频疯传。</div>
+                <div class="meme-name">MPL S17 电竞赛事</div>
+                <div class="meme-desc">Mobile Legends职业联赛Season 17 Grand Finals，菲律宾站FLCN vs TLPH决赛激战，印尼马来同步热播</div>
                 <div class="meme-stats">
-                  <span class="meme-stat trending">🔥 全网热议</span>
-                  <span class="meme-stat comments">💬 Kompas报道</span>
+                  <span class="meme-stat views">&#128065; YouTube Trending多国</span>
+                  <span class="meme-stat trending">&#128293; 东南亚电竞顶流</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://surabaya.kompas.com/read/2026/05/29/135610478/viral-video-pocong-di-kediri-tak-berkutik-dimarahi-orangtuanya" target="_blank">📰 Kompas</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=pocong%20kediri%20viral" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.youtube.com/results?search_query=MPL+S17+Grand+Finals" target="_blank" class="meme-link">YouTube搜索</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>搞笑:</strong> &ldquo;开Xena视频通话被妈妈抓包&rdquo;剧情</li>
-                    <li><strong>挑战:</strong> 万圣节主题直播间cosplay挑战</li>
-                    <li><strong>React:</strong> 印尼恐怖角色连线react视频</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="meme-card">
-              <div class="meme-thumb">🛸</div>
-              <div class="meme-card-content">
-                <div class="meme-name">UFO Natuna骗局</div>
-                <div class="meme-desc">&ldquo;TNI海军巡逻机在纳土纳海域雷达发现UFO&rdquo;视频疯传获1400万播放，后证实为AI生成假视频。</div>
-                <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 14M+ 播放</span>
-                  <span class="meme-stat comments">💬 已辟谣</span>
-                </div>
-                <div class="meme-links">
-                  <a class="meme-link" href="https://video.tribunnews.com/news/938991/heboh-narasi-muncul-ufo-alien-di-laut-natuna-terekam-radar-jet-militer-tni-al-begini-faktanya" target="_blank">📰 Tribun</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=UFO%20Natuna%20TNI" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://www.youtube.com/results?search_query=UFO+Natuna+viral" target="_blank">▶️ YouTube</a>
-                </div>
-                <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
-                  <ul class="creative-suggest-list">
-                    <li><strong>特效:</strong> &ldquo;Xena视频通话发现外星人&rdquo;特效剧情</li>
-                    <li><strong>互动:</strong> 主播假装看到UFO直播间互动</li>
-                    <li><strong>对比:</strong> AI生成vs真实反应对比挑战</li>
+                    <li><strong>电竞观赛派对：</strong>在Xena房间组织MPL观赛语音派对，边看比赛边交友</li>
                   </ul>
                 </div>
               </div>
@@ -509,160 +361,91 @@
           </div>
         </div>
         <div class="sub-section">
-          <h4>📅 文化日历</h4>
+          <h4>&#128197; 文化日历</h4>
           <ul class="calendar-list">
-            <li class="calendar-item"><span class="cal-date">6/1</span><div class="cal-info"><strong>Hari Lahir Pancasila</strong> &mdash; 建国五原则日，全国放假</div></li>
-            <li class="calendar-item"><span class="cal-date">6/5</span><div class="cal-info"><strong>Timnas vs Oman</strong> &mdash; GBK主场FIFA Matchday</div></li>
-            <li class="calendar-item"><span class="cal-date">6/10-14</span><div class="cal-info"><strong>MPL ID S17 Playoffs</strong> &mdash; Jakarta电竞热点</div></li>
-            <li class="calendar-item"><span class="cal-date">6/16</span><div class="cal-info"><strong>Tahun Baru Islam 1448H</strong> &mdash; 伊斯兰新年</div></li>
+            <li class="calendar-item"><span class="cal-date">6/1</span><div class="cal-info"><strong>Hari Lahir Pancasila</strong> &mdash; 印尼建国五原则日</div></li>
+            <li class="calendar-item"><span class="cal-date">6/16</span><div class="cal-info"><strong>伊斯兰新年 1448H</strong> &mdash; 公共假期</div></li>
           </ul>
-        </div>
-        <div class="sub-section">
-          <h4>💡 广告创意启发</h4>
-          <table class="creative-table">
-            <thead><tr><th>热点</th><th>素材方向</th><th>文案角度</th><th>渠道</th><th>风险</th></tr></thead>
-            <tbody>
-              <tr><td>MBG歌曲(55.6M)</td><td>AI搞笑配音短视频</td><td>&ldquo;Komentar kamu jadi lagu viral! Ngobrol di Xena~&rdquo;</td><td>TikTok/IG</td><td class="risk-low">低</td></tr>
-              <tr><td>Veronika Ko</td><td>Bluetooth梗社交场景</td><td>&ldquo;Bluetooth connected &rarr; Xena connected 📶&rdquo;</td><td>TikTok</td><td class="risk-low">低</td></tr>
-              <tr><td>Timnas Matchday</td><td>球迷社交/看球场景</td><td>&ldquo;Nonton bareng teman baru di Xena! ⚽&rdquo;</td><td>IG/FB</td><td class="risk-low">低</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="sub-section">
-          <div class="warning-box">
-            <h4>⚠️ 避坑提醒</h4>
-            <ul>
-              <li>MBG涉及现任部长，可用音乐元素但绝不引用政治人物形象</li>
-              <li>纳土纳海域涉及中印尼地缘政治敏感区，避免相关话题</li>
-              <li>Pocong是文化敏感形象，不可恶搞宗教丧葬仪式</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- === Philippines === -->
+    <!-- PHILIPPINES -->
     <div class="country-card sea">
-      <div class="country-title" onclick="this.parentElement.classList.toggle('collapsed')">
-        <span class="flag">🇵🇭</span>
-        <h3>菲律宾 Philippines</h3>
-        <span class="toggle">▼</span>
-      </div>
+      <div class="country-title"><span class="flag">&#127477;&#127469;</span><h3>Philippines</h3><span class="toggle">&#9660;</span></div>
       <div class="country-body">
         <div class="sub-section">
-          <h4>🔥 本周热点 Top 5</h4>
+          <h4>&#128293; Top 5 热门话题</h4>
           <ul class="trend-list">
-            <li class="trend-item">
-              <span class="trend-rank hot">1</span>
-              <div class="trend-content">
-                <div class="trend-name">Bato dela Rosa &ldquo;Senate Run&rdquo;</div>
-                <div class="trend-desc">参议员被NBI追赶的CCTV画面引爆全网，衍生跑酷游戏、婚礼恶搞、无数梗图。CNN/NYT国际报道。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">X</span><span class="tag platform">Facebook</span><span class="tag heat">🔥🔥🔥 国际报道</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank hot">2</span>
-              <div class="trend-content">
-                <div class="trend-name">Senate Crisis / &ldquo;Maleta Gang&rdquo;</div>
-                <div class="trend-desc">参议院少数派因反对远程投票提案集体退场，&ldquo;Maleta Gang&rdquo;&ldquo;Walking Crocs&rdquo;标签疯传。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Facebook</span><span class="tag heat">🔥🔥🔥 连续多日热搜</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">3</span>
-              <div class="trend-content">
-                <div class="trend-name">Tayo Sa Wakas (DonBelle新片)</div>
-                <div class="trend-desc">Belle Mariano &amp; Donny Pangilinan爱情片创下2026年菲律宾本土最高首日票房P12M，250家影院上映。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">Instagram</span><span class="tag heat">🔥🔥🔥 P12M首日票房</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">4</span>
-              <div class="trend-content">
-                <div class="trend-name">Angeles City Building Collapse</div>
-                <div class="trend-desc">5/24安赫莱斯城在建9层大楼倒塌，已确认13人死亡，国际新闻。</div>
-                <div class="trend-meta"><span class="tag platform">Facebook</span><span class="tag platform">X</span><span class="tag heat">🔥🔥🔥</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">5</span>
-              <div class="trend-content">
-                <div class="trend-name">VP Sara Duterte弹劾答辩截止</div>
-                <div class="trend-desc">6月1日为副总统回应弹劾条款的最后期限，全国政治焦点。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Facebook</span><span class="tag heat">🔥🔥</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
+            <li class="trend-item"><span class="trend-rank hot">1</span><div class="trend-content"><div class="trend-name">#MissBehaveMediaCon</div><div class="trend-desc">Alexa Ilacad主演新剧MissBehave媒体发布会引爆讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">542分</span><span class="tag peak">&#128308; 峰值 16h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank hot">2</span><div class="trend-content"><div class="trend-name">#GirlRulesSeriesFinalEP</div><div class="trend-desc">泰剧Girl Rules大结局，菲律宾粉丝热议</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">856分</span><span class="tag peak">&#128308; 峰值 18h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">3</span><div class="trend-content"><div class="trend-name">#DMDLINEUP2026SOON</div><div class="trend-desc">菲律宾音乐节Duties Midyear Dream阵容即将公布</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">268分</span><span class="tag rising">&#9650; 上升中</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">4</span><div class="trend-content"><div class="trend-name">#6YearsWithSunoo</div><div class="trend-desc">ENHYPEN成员Sunoo出道6周年，菲律宾粉丝庆祝</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">222分</span><span class="tag new">NEW</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">5</span><div class="trend-content"><div class="trend-name">#BGYO_Akira</div><div class="trend-desc">P-pop组合BGYO成员Akira相关话题</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">trending</span><span class="tag new">NEW</span></div></div></li>
           </ul>
         </div>
         <div class="sub-section">
-          <h4>🎭 热梗 / 病毒内容</h4>
+          <h4>&#127775; 热梗 / 病毒内容</h4>
           <div class="meme-grid">
             <div class="meme-card">
-              <div class="meme-thumb">🎮</div>
               <div class="meme-card-content">
-                <div class="meme-name">Senate Run 游戏</div>
-                <div class="meme-desc">开发者Jopel Mandac用4天开发的跑酷游戏，玩家扮演像素化Bato在参议院跳过NBI探员。被NYT报道，已有Wikipedia页面。</div>
+                <div class="meme-name">Sharmaine &amp; Vanessa &mdash; 水果改名梗</div>
+                <div class="meme-desc">TikTok博主BAET的系列搞笑短剧：橘子嫌弃自己叫&ldquo;Orange&rdquo;要改名&ldquo;Sharmaine&rdquo;，苍蝇要改名&ldquo;Vanessa&rdquo;。500K+反应，SM超市都改名了</div>
                 <div class="meme-stats">
-                  <span class="meme-stat likes">❤️ 150K+ TikTok赞</span>
-                  <span class="meme-stat trending">🔥 国际媒体报道</span>
+                  <span class="meme-stat views">&#128065; 500K+ reactions</span>
+                  <span class="meme-stat followers">&#128101; 330K粉丝</span>
+                  <span class="meme-stat likes">&#10084; 23.9M总赞</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://philstarlife.com/news-and-views/305199-bato-dela-rosa-viral-senate-chase" target="_blank">📰 PhilSTAR</a>
-                  <a class="meme-link" href="https://www.revu.com.ph/2026/05/senate-run-game-sen-bato-viral-stairs/" target="_blank">📰 REVU</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Senate%20Run%20Bato" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://www.youtube.com/results?search_query=Senate+Run+game+Philippines" target="_blank">▶️ YouTube</a>
+                  <a href="https://www.tiktok.com/@baet" target="_blank" class="meme-link">TikTok @BAET</a>
+                  <a href="https://zeenmedia.com/who-are-sharmaine-and-vanessa-filipino-internets-new-memes/" target="_blank" class="meme-link">详细报道</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>互动:</strong> &ldquo;直播间版跑酷挑战&rdquo;互动游戏</li>
-                    <li><strong>搞笑:</strong> 主播模仿Bato跑步摔倒搞笑片段</li>
-                    <li><strong>挑战:</strong> &ldquo;在Xena里你能跑多远&rdquo;挑战赛</li>
+                    <li><strong>起名互动：</strong>&ldquo;如果你的Xena好友要改名，你会叫TA什么？&rdquo;激发用户在聊天中创造搞笑昵称</li>
+                    <li><strong>角色配音：</strong>Xena直播间用菲律宾口音配音Sharmaine对话，引发模仿二创</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">💒</div>
               <div class="meme-card-content">
-                <div class="meme-name">Bato婚礼SDE恶搞</div>
-                <div class="meme-desc">新郎在婚礼SDE视频中完美复刻Bato追跑+摔倒名场面，配新闻原声画外音。TikTok 410K+互动。</div>
+                <div class="meme-name">Gen Z Jeepney Driver &ldquo;Passenger Princess&rdquo;</div>
+                <div class="meme-desc">年轻吉普尼司机Aldrin开吉普尼接女友上车并获得亲吻，甜蜜视频席卷全菲，明星都来评论</div>
                 <div class="meme-stats">
-                  <span class="meme-stat likes">❤️ 410.4K+ 互动</span>
+                  <span class="meme-stat views">&#128065; 4.9M播放</span>
+                  <span class="meme-stat comments">&#128172; 7K+评论</span>
+                  <span class="meme-stat trending">&#128293; 明星互动</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://philnews.ph/2026/05/26/groom-goes-viral-after-recreating-senator-bato-dela-rosas-run-in-wedding-sde/" target="_blank">📰 PhilNews</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Bato%20wedding%20SDE" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.tiktok.com/@nirds24" target="_blank" class="meme-link">TikTok @nirds24</a>
+                  <a href="https://interaksyon.philstar.com/trends-spotlights/2026/06/01/314197/gen-z-jeepney-drivers-kilig-buzz-passenger-princess-moment/" target="_blank" class="meme-link">PhilStar</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>社交:</strong> &ldquo;在Xena上直播婚礼名场面&rdquo;</li>
-                    <li><strong>搞笑:</strong> 好友视频通话恶搞追逐剧情</li>
-                    <li><strong>投票:</strong> &ldquo;最有创意的SDE&rdquo;票选直播</li>
+                    <li><strong>甜蜜接驾：</strong>&ldquo;你会用什么方式在Xena上给TA一个kilig moment?&rdquo;制作Xena版接驾送惊喜短视频</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">🪂</div>
               <div class="meme-card-content">
-                <div class="meme-name">Paragliding Bukidnon恶作剧</div>
-                <div class="meme-desc">游客问教练飞了多久，教练答&ldquo;Karon pa lang&rdquo;（刚开始），她立刻尖叫崩溃。实际教练从2014年就开始飞行。</div>
+                <div class="meme-name">滑翔伞飞行员恶作剧</div>
+                <div class="meme-desc">Bukidnon滑翔伞教练谎称&ldquo;我第一次飞&rdquo;吓坏乘客Kaye Kasim，她的尖叫爆红</div>
                 <div class="meme-stats">
-                  <span class="meme-stat trending">🔥 CDN Digital报道</span>
-                  <span class="meme-stat comments">💬 大量搞笑评论</span>
+                  <span class="meme-stat views">&#128065; 百万级播放</span>
+                  <span class="meme-stat trending">&#128293; 评论区爆笑</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://cebudailynews.inquirer.net/732126/what-do-you-mean-karon-pa-lang-woman-panics-after-paragliding-pilots-joke" target="_blank">📰 CDN Digital</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=paragliding%20Bukidnon%20karon%20pa%20lang" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.tiktok.com/search?q=paragliding+bukidnon+first+time" target="_blank" class="meme-link">TikTok搜索</a>
+                  <a href="https://cebudailynews.inquirer.net/732126/what-do-you-mean-karon-pa-lang-woman-panics-after-paragliding-pilots-joke" target="_blank" class="meme-link">Inquirer</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>恶搞:</strong> &ldquo;第一次开Xena直播&rdquo;恶作剧反应</li>
-                    <li><strong>React:</strong> 极限运动视频通话惊吓合集</li>
-                    <li><strong>音效:</strong> &ldquo;Karon pa lang&rdquo;音效挑战</li>
+                    <li><strong>反转惊喜：</strong>制作&ldquo;第一次用Xena&rdquo;反转类短视频，开头装不会用，后来发现超好玩</li>
                   </ul>
                 </div>
               </div>
@@ -670,158 +453,87 @@
           </div>
         </div>
         <div class="sub-section">
-          <h4>📅 文化日历</h4>
+          <h4>&#128197; 文化日历</h4>
           <ul class="calendar-list">
-            <li class="calendar-item"><span class="cal-date">6/1</span><div class="cal-info"><strong>Habagat西南季风开始</strong> &mdash; 雨季来临</div></li>
-            <li class="calendar-item"><span class="cal-date">6/12</span><div class="cal-info"><strong>Philippine Independence Day</strong> &mdash; 第128周年独立日，国定假日</div></li>
-            <li class="calendar-item"><span class="cal-date">6/21</span><div class="cal-info"><strong>Father&rsquo;s Day</strong> &mdash; 商业推广窗口</div></li>
+            <li class="calendar-item"><span class="cal-date">6/12</span><div class="cal-info"><strong>Philippine Independence Day</strong> &mdash; 独立日，国民情绪高涨</div></li>
+            <li class="calendar-item"><span class="cal-date">6/16</span><div class="cal-info"><strong>伊斯兰新年</strong> &mdash; 棉兰老穆斯林地区假期</div></li>
           </ul>
-        </div>
-        <div class="sub-section">
-          <h4>💡 广告创意启发</h4>
-          <table class="creative-table">
-            <thead><tr><th>热点</th><th>素材方向</th><th>文案角度</th><th>渠道</th><th>风险</th></tr></thead>
-            <tbody>
-              <tr><td>Senate Run游戏化</td><td>跑酷互动直播</td><td>&ldquo;How far can you run? Try Xena! 🏃&rdquo;</td><td>TikTok</td><td class="risk-mid">中</td></tr>
-              <tr><td>DonBelle电影</td><td>浪漫社交场景</td><td>&ldquo;Find your &lsquo;Tayo Sa Wakas&rsquo; on Xena 💕&rdquo;</td><td>IG/TikTok</td><td class="risk-low">低</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="sub-section">
-          <div class="warning-box">
-            <h4>⚠️ 避坑提醒</h4>
-            <ul>
-              <li>Bato/参议院危机是高度政治敏感话题，可用搞笑元素但绝不发表政治立场</li>
-              <li>Angeles City大楼倒塌是悲剧事件，绝对不可用于商业创意</li>
-              <li>VP Sara弹劾涉及Duterte家族，完全避免</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- === Malaysia === -->
+    <!-- MALAYSIA -->
     <div class="country-card sea">
-      <div class="country-title" onclick="this.parentElement.classList.toggle('collapsed')">
-        <span class="flag">🇲🇾</span>
-        <h3>马来西亚 Malaysia</h3>
-        <span class="toggle">▼</span>
-      </div>
+      <div class="country-title"><span class="flag">&#127474;&#127486;</span><h3>Malaysia</h3><span class="toggle">&#9660;</span></div>
       <div class="country-body">
         <div class="sub-section">
-          <h4>🔥 本周热点 Top 5</h4>
+          <h4>&#128293; Top 5 热门话题</h4>
           <ul class="trend-list">
-            <li class="trend-item">
-              <span class="trend-rank hot">1</span>
-              <div class="trend-content">
-                <div class="trend-name">Social Media Age Verification (Under-16 Ban)</div>
-                <div class="trend-desc">6/1起执行Online Safety Act 2025，16岁以下禁注册社媒，需MyKad验证。影响800万+用户，ABC News国际报道。</div>
-                <div class="trend-meta"><span class="tag platform">全平台</span><span class="tag heat">🔥🔥🔥 ABC国际报道</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank hot">2</span>
-              <div class="trend-content">
-                <div class="trend-name">KLIA Parking Fee Controversy</div>
-                <div class="trend-desc">TikTok网红@deadpudds被KLIA停车场收费RM384(预期RM213)引发全网消费者权益讨论，MAHB公开道歉。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">Reddit</span><span class="tag heat">🔥🔥🔥 百万级播放</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">3</span>
-              <div class="trend-content">
-                <div class="trend-name">&ldquo;Six Seven&rdquo; Meme课堂禁令</div>
-                <div class="trend-desc">源自美国drill rap的&ldquo;six seven&rdquo;梗在马来学校泛滥，老师惩罚学生抄写200遍。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">Threads</span><span class="tag heat">🔥🔥</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">4</span>
-              <div class="trend-content">
-                <div class="trend-name">&ldquo;Abang &amp; Ina&rdquo; Controversy</div>
-                <div class="trend-desc">网红Ain Ramli与Mimi Fly合拍短剧被指&ldquo;推广同性关系&rdquo;引发争议，Ain公开否认。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">Threads</span><span class="tag heat">🔥🔥</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">5</span>
-              <div class="trend-content">
-                <div class="trend-name">Ops Kesan 6.0 反暴利行动</div>
-                <div class="trend-desc">6/1&ndash;8/31政府启动反暴利行动，监控石油危机对民生物价影响。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Facebook</span><span class="tag heat">🔥🔥</span><span class="tag rising">📈 上升中</span></div>
-              </div>
-            </li>
+            <li class="trend-item"><span class="trend-rank hot">1</span><div class="trend-content"><div class="trend-name">#ASIATOPMUSICFESTIVAL</div><div class="trend-desc">亚洲顶级音乐节在马来西亚举办，全网热议</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">1080分</span><span class="tag peak">&#128308; 峰值 23h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank hot">2</span><div class="trend-content"><div class="trend-name">#CxMinMALAYSIA</div><div class="trend-desc">CxMin马来西亚相关活动引爆社交媒体</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">1065分</span><span class="tag peak">&#128308; 峰值 23h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">3</span><div class="trend-content"><div class="trend-name">#GMMTVMUSICONSINGAPOREDAY2</div><div class="trend-desc">GMMTV音乐会新加坡站第二天，马来粉丝讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">279分</span><span class="tag new">NEW</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">4</span><div class="trend-content"><div class="trend-name">#LINGORMFanPartyBD2026</div><div class="trend-desc">泰剧LINGORM粉丝派对/生日会</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">266分</span><span class="tag new">NEW</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">5</span><div class="trend-content"><div class="trend-name">MPL MY Season 17</div><div class="trend-desc">Mobile Legends马来西亚联赛Week 6激战正酣</div><div class="trend-meta"><span class="tag platform">YouTube</span><span class="tag heat">trending</span><span class="tag rising">&#9650; 上升中</span></div></div></li>
           </ul>
         </div>
         <div class="sub-section">
-          <h4>🎭 热梗 / 病毒内容</h4>
+          <h4>&#127775; 热梗 / 病毒内容</h4>
           <div class="meme-grid">
             <div class="meme-card">
-              <div class="meme-thumb">🅿️</div>
               <div class="meme-card-content">
-                <div class="meme-name">KLIA停车费&ldquo;隐形涨价&rdquo;</div>
-                <div class="meme-desc">25岁TikToker Chin Pui Ting停车12天被收RM384(计算器显示RM213)，发现MAHB偷偷取消促销并删除旧帖，引发MAHB道歉。</div>
+                <div class="meme-name">摩托车手帮助迷路老送货员</div>
+                <div class="meme-desc">Vlogger Aiman Rukhie在吉隆坡遇到迷路的老年送餐员，主动带路并完成送餐。视频传递跨种族善意</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 百万级播放</span>
-                  <span class="meme-stat comments">💬 Reddit千赞</span>
+                  <span class="meme-stat views">&#128065; 1.8M播放</span>
+                  <span class="meme-stat comments">&#128172; 2K+评论</span>
+                  <span class="meme-stat trending">&#128293; 跨种族正能量</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://mustsharenews.com/parking-rates-klia/" target="_blank">📰 MustShare</a>
-                  <a class="meme-link" href="https://www.therakyatpost.com/news/malaysia/2026/05/16/watch-klia-raised-its-parking-rates-the-calculator-didnt-get-the-memo/" target="_blank">📰 Rakyat Post</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=KLIA%20parking%20deadpudds" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.tiktok.com/search?q=aiman+rukhie+deliveryman" target="_blank" class="meme-link">TikTok搜索</a>
+                  <a href="https://www.asiaone.com/malaysia/motorcyclist-helps-elderly-deliveryman-kindness" target="_blank" class="meme-link">AsiaOne</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>互动:</strong> &ldquo;这个价格你猜对了吗&rdquo;直播互动</li>
-                    <li><strong>场景:</strong> &ldquo;出去旅行前先开Xena问朋友&rdquo;</li>
-                    <li><strong>Vlog:</strong> 机场出发前视频通话告别</li>
+                    <li><strong>暖心时刻：</strong>&ldquo;在Xena上你遇到过最暖心的陌生人是谁？&rdquo;征集跨文化友善互动故事</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">🏍️</div>
               <div class="meme-card-content">
-                <div class="meme-name">摩托车手帮助迷路老年送餐员</div>
-                <div class="meme-desc">博主Aiman Rukhie在吉隆坡偶遇不会用Waze导航的年长送餐员，主动带路帮他完成配送。高赞评论：&ldquo;这证明我们可以和平共处。&rdquo;</div>
+                <div class="meme-name">农夫哭泣 &mdash; 狗被地方议会带走</div>
+                <div class="meme-desc">吉打州农民Sabar的狗被地方议会依投诉带走，他含泪的视频引发动物保护大讨论</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 1.8M 播放</span>
-                  <span class="meme-stat comments">💬 2,000+ 评论</span>
+                  <span class="meme-stat views">&#128065; 800K+播放</span>
+                  <span class="meme-stat trending">&#128293; 社会热议</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.asiaone.com/malaysia/motorcyclist-helps-elderly-deliveryman-kindness" target="_blank">📰 AsiaOne</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Aiman%20Rukhie%20delivery%20rider" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.tiktok.com/@ismesabar" target="_blank" class="meme-link">TikTok @ismesabar</a>
+                  <a href="https://theonlinecitizen.com/2026/05/28/malaysian-farmer-cries-as-local-council-takes-dogs-away-viral-video-sparks-online-sympathy-and-debate" target="_blank" class="meme-link">报道</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>暖心:</strong> &ldquo;用Xena帮陌生人找路&rdquo;暖心剧情</li>
-                    <li><strong>团结:</strong> 跨种族友谊故事直播间分享</li>
-                    <li><strong>正能量:</strong> &ldquo;Malaysia团结时刻&rdquo;合集</li>
+                    <li><strong>宠物话题：</strong>Xena宠物主题房间，用户分享与毛孩的故事，低敏感度高互动</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">🐒</div>
               <div class="meme-card-content">
-                <div class="meme-name">高速公路猴子救援 &ldquo;Kula&rdquo;</div>
-                <div class="meme-desc">兽医Dr Marlia在柔佛Kulai高速公路救起被车撞伤的猴子，猴子坐在副驾脚垫的画面萌翻全网，昵称&ldquo;Kula&rdquo;。</div>
+                <div class="meme-name">MCMC要求TikTok处理侮辱王室内容</div>
+                <div class="meme-desc">马来西亚通讯委员会命令TikTok处理涉及国王Sultan Ibrahim的AI生成诽谤内容</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 1.2M+ 播放</span>
-                  <span class="meme-stat likes">❤️ 数千赞</span>
+                  <span class="meme-stat trending">&#128293; 政策热点</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.straitstimes.com/asia/se-asia/drenched-injured-monkeys-highway-rescue-in-malaysia-goes-viral" target="_blank">📰 Straits Times</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=monkey%20highway%20Kulai%20Malaysia" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.aljazeera.com/economy/2026/5/22/malaysia-orders-tiktok-to-address-defamatory-content-about-king" target="_blank" class="meme-link">Al Jazeera</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>萌宠:</strong> &ldquo;直播间晒宠物日常&rdquo;互动</li>
-                    <li><strong>故事:</strong> 动物救援故事分享+连线兽医</li>
-                    <li><strong>趣味:</strong> &ldquo;给你的宠物取个公路名&rdquo;挑战</li>
+                    <li><strong>合规提醒：</strong>马来市场投放素材需严格规避王室相关内容，AI生成内容需审核</li>
                   </ul>
                 </div>
               </div>
@@ -829,172 +541,98 @@
           </div>
         </div>
         <div class="sub-section">
-          <h4>📅 文化日历</h4>
+          <h4>&#128197; 文化日历</h4>
           <ul class="calendar-list">
-            <li class="calendar-item"><span class="cal-date">6/1</span><div class="cal-info"><strong>Yang di-Pertuan Agong生日</strong> &mdash; 联邦公共假日</div></li>
-            <li class="calendar-item"><span class="cal-date">6/1</span><div class="cal-info"><strong>Gawai Dayak</strong> &mdash; 砂拉越丰收节</div></li>
-            <li class="calendar-item"><span class="cal-date">6/17</span><div class="cal-info"><strong>Awal Muharram</strong> &mdash; 伊斯兰新年</div></li>
-            <li class="calendar-item"><span class="cal-date">6/25-28</span><div class="cal-info"><strong>Festival Budaya Malaysia</strong> &mdash; 怡保文化节</div></li>
+            <li class="calendar-item"><span class="cal-date">6/2</span><div class="cal-info"><strong>Yang di-Pertuan Agong诞辰</strong> &mdash; 国王官方生日，公共假期</div></li>
+            <li class="calendar-item"><span class="cal-date">6/16</span><div class="cal-info"><strong>Awal Muharram</strong> &mdash; 伊斯兰新年，公共假期</div></li>
           </ul>
-        </div>
-        <div class="sub-section">
-          <h4>💡 广告创意启发</h4>
-          <table class="creative-table">
-            <thead><tr><th>热点</th><th>素材方向</th><th>文案角度</th><th>渠道</th><th>风险</th></tr></thead>
-            <tbody>
-              <tr><td>暖心送餐员(1.8M)</td><td>正能量社交故事</td><td>&ldquo;Kawan baru, cerita baru di Xena 🤝&rdquo;</td><td>TikTok/FB</td><td class="risk-low">低</td></tr>
-              <tr><td>猴子救援Kula</td><td>萌宠互动直播</td><td>&ldquo;Share your pet stories on Xena! 🐒&rdquo;</td><td>TikTok/IG</td><td class="risk-low">低</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="sub-section">
-          <div class="warning-box">
-            <h4>⚠️ 避坑提醒</h4>
-            <ul>
-              <li>马来西亚王室绝对不可触碰，侮辱国王可被警方调查</li>
-              <li>&ldquo;Abang &amp; Ina&rdquo;涉及LGBTQ+话题，马来为保守穆斯林国家，完全避免</li>
-              <li>Under-16社媒禁令生效，广告投放需确保目标受众年龄合规</li>
-              <li>3R议题(Race, Religion, Royalty)是法律红线</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
-
-<!-- ==================== REGION: MIDDLE EAST ==================== -->
-<div class="region-section" id="region-mena">
+<!-- ==================== MIDDLE EAST ==================== -->
+<div class="region-section" id="mena-section">
   <div class="region-header">
-    <span class="region-tag mena">🏜️ 中东</span>
-    <h2>Middle East &amp; North Africa</h2>
+    <span class="region-tag mena">&#127773; 中东</span>
+    <h2>Saudi Arabia &middot; Egypt &middot; Turkey &middot; UAE &middot; Iraq</h2>
   </div>
   <div class="country-grid">
 
-    <!-- === Saudi Arabia === -->
+    <!-- SAUDI ARABIA -->
     <div class="country-card mena">
-      <div class="country-title" onclick="this.parentElement.classList.toggle('collapsed')">
-        <span class="flag">🇸🇦</span>
-        <h3>沙特阿拉伯 Saudi Arabia</h3>
-        <span class="toggle">▼</span>
-      </div>
+      <div class="country-title"><span class="flag">&#127480;&#127462;</span><h3>Saudi Arabia</h3><span class="toggle">&#9660;</span></div>
       <div class="country-body">
         <div class="sub-section">
-          <h4>🔥 本周热点 Top 5</h4>
+          <h4>&#128293; Top 5 热门话题</h4>
           <ul class="trend-list">
-            <li class="trend-item">
-              <span class="trend-rank hot">1</span>
-              <div class="trend-content">
-                <div class="trend-name">Hajj 2026 &ldquo;أنا مو شيطان&rdquo; (I Am No Shaitan)</div>
-                <div class="trend-desc">朝觐者投石仪式中被误击后幽默回应&ldquo;我不是恶魔&rdquo;，视频在全球穆斯林社交圈疯传。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">TikTok</span><span class="tag platform">YouTube</span><span class="tag heat">🔥🔥🔥 1.7M朝觐者</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank hot">2</span>
-              <div class="trend-content">
-                <div class="trend-name">KFC &ldquo;Those Kentaaky Guys&rdquo; 病毒营销</div>
-                <div class="trend-desc">三个鸡头面具神秘人数周出现在沙特各商场，后在MBC直播揭晓为KFC大使。2026年沙特最成功病毒营销。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">X</span><span class="tag platform">Instagram</span><span class="tag heat">🔥🔥🔥 数周霸屏</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">3</span>
-              <div class="trend-content">
-                <div class="trend-name">Ryanair &times; CR7 &ldquo;لا عنده زملاء؟&rdquo;</div>
-                <div class="trend-desc">Ryanair吐槽C罗独自庆祝夺冠照，3小时50K赞/5K转发，全球体育媒体报道。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Instagram</span><span class="tag heat">🔥🔥🔥 50K赞/3h</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">4</span>
-              <div class="trend-content">
-                <div class="trend-name">Saudi TikTok 骑马拔剑转场</div>
-                <div class="trend-desc">沙特创作者将Jungkook摩托车转场(27M+播放)改编为阿拉伯马+利剑版本，被赞&ldquo;重新定义文化&rdquo;。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">X</span><span class="tag heat">🔥🔥 百万级播放</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">5</span>
-              <div class="trend-content">
-                <div class="trend-name">#معاك_يالاخضر World Cup 2026倒计时</div>
-                <div class="trend-desc">沙特出征美国，G组对阵西班牙/乌拉圭/佛得角，X上趋势6+小时。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">TikTok</span><span class="tag heat">🔥🔥</span><span class="tag rising">📈 上升中</span></div>
-              </div>
-            </li>
+            <li class="trend-item"><span class="trend-rank hot">1</span><div class="trend-content"><div class="trend-name">#قمر_الليله</div><div class="trend-desc">&ldquo;今夜之月&rdquo;&mdash;沙特网友分享夜空美景</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">602分</span><span class="tag peak">&#128308; 峰值 14h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank hot">2</span><div class="trend-content"><div class="trend-name">#حادث_مروري_بين_عريسين</div><div class="trend-desc">两位新郎的交通事故引发全国讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">491分</span><span class="tag peak">&#128308; 峰值 11h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">3</span><div class="trend-content"><div class="trend-name">#ExtendJaissleUntil2o30</div><div class="trend-desc">沙特球迷呼吁续约足球教练Jaissle至2030</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">331分</span><span class="tag rising">&#9650; 上升中</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">4</span><div class="trend-content"><div class="trend-name">#صيفنا_ونعرفه</div><div class="trend-desc">&ldquo;我们知道我们的夏天&rdquo;&mdash;暑假出行话题</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">236分</span><span class="tag new">NEW</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">5</span><div class="trend-content"><div class="trend-name">#رجل_الاعمال_ياسر_الجعوان</div><div class="trend-desc">商人Yasser Al-Jaawan相关新闻</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">297分</span><span class="tag new">NEW</span></div></div></li>
           </ul>
         </div>
         <div class="sub-section">
-          <h4>🎭 热梗 / 病毒内容</h4>
+          <h4>&#127775; 热梗 / 病毒内容</h4>
           <div class="meme-grid">
             <div class="meme-card">
-              <div class="meme-thumb">🐔</div>
               <div class="meme-card-content">
-                <div class="meme-name">&ldquo;Those Kentaaky Guys&rdquo; KFC病毒营销</div>
-                <div class="meme-desc">三个戴鸡头面具的神秘人在沙特各大商场出没数周，引发全国&ldquo;他们是谁&rdquo;猜测，后在MBC《صباح الخير يا عرب》直播揭晓。</div>
+                <div class="meme-name">阿拉伯马+宝剑 TikTok Remix</div>
+                <div class="meme-desc">Jungkook摩托车转场全球趋势的沙特版：用纯种阿拉伯马、宝剑和沙漠场景替换，&ldquo;文化remix&rdquo;概念风靡全球</div>
                 <div class="meme-stats">
-                  <span class="meme-stat trending">🔥 数周热搜</span>
-                  <span class="meme-stat followers">👥 7M+覆盖</span>
+                  <span class="meme-stat views">&#128065; 百万级播放</span>
+                  <span class="meme-stat trending">&#128293; 全球传播</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://destinationksa.com/en/those-kentaaky-guys/" target="_blank">📰 DestinationKSA</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Those%20Kentaaky%20Guys%20KFC" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://x.com/search?q=Those%20Kentaaky%20Guys" target="_blank">🐦 X</a>
+                  <a href="https://www.tiktok.com/search?q=saudi+horse+sword+jungkook+trend" target="_blank" class="meme-link">TikTok搜索</a>
+                  <a href="https://lovin.co/riyadh/en/news/saudi-tiktok-said-lets-make-it-iconic-and-dropped-horses-and-swords/" target="_blank" class="meme-link">Lovin Riyadh</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>悬念:</strong> &ldquo;猜猜Xena直播间的神秘面具人是谁&rdquo;</li>
-                    <li><strong>街头:</strong> 戴面具在商场发Xena邀请码互动</li>
-                    <li><strong>揭秘:</strong> 神秘主播身份揭晓+限时礼物活动</li>
+                    <li><strong>文化remix：</strong>在Xena上发起&ldquo;用你的文化remix这个趋势&rdquo;挑战，鼓励中东用户展示本地特色</li>
+                    <li><strong>沙漠骑士主题：</strong>设计Xena中东限定版骑士主题头像框/礼物特效</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">✈️</div>
               <div class="meme-card-content">
-                <div class="meme-name">Ryanair吐槽CR7 &ldquo;没有队友？&rdquo;</div>
-                <div class="meme-desc">C罗独自庆祝Al-Nassr夺冠，Ryanair精准吐槽&ldquo;他没有队友吗？&rdquo;3小时50K赞。C罗随后补发团队照&ldquo;灭火&rdquo;。</div>
+                <div class="meme-name">KFC &ldquo;Those Kentaaky Guys&rdquo; 神秘营销</div>
+                <div class="meme-desc">三个戴鸡头面具的神秘人物在沙特各大地标出没，引发全网猜测。最终揭晓是KFC营销活动</div>
                 <div class="meme-stats">
-                  <span class="meme-stat likes">❤️ 50K+ 赞</span>
-                  <span class="meme-stat comments">💬 5K+ 转发</span>
+                  <span class="meme-stat views">&#128065; 全国级热度</span>
+                  <span class="meme-stat trending">&#128293; 悬念营销经典</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.marca.com/en/football/2026/05/22/don-t-you-have-any-teammates-ryanair-mocks-cristiano-ronaldo-s-celebration-for-the-saudi-pro-league.html" target="_blank">📰 Marca</a>
-                  <a class="meme-link" href="https://x.com/search?q=Ryanair%20Ronaldo%20teammates" target="_blank">🐦 X</a>
+                  <a href="https://www.tiktok.com/search?q=kentaaky+guys+saudi" target="_blank" class="meme-link">TikTok搜索</a>
+                  <a href="https://destinationksa.com/en/those-kentaaky-guys/" target="_blank" class="meme-link">DestinationKSA</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>对比:</strong> &ldquo;一个人的荣耀vs一群人的快乐&rdquo; Xena社交</li>
-                    <li><strong>吐槽:</strong> &ldquo;直播间也只有你自己？来Xena找队友&rdquo;</li>
-                    <li><strong>挑战:</strong> CR7庆祝模板+Xena好友标签挑战</li>
+                    <li><strong>神秘人物悬念：</strong>设计&ldquo;谁是你在Xena上的mystery friend?&rdquo;系列短视频，模仿KFC悬念揭晓结构</li>
+                    <li><strong>面具滤镜：</strong>制作Xena版趣味面具AR滤镜，结合中东本地化场景</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">🐎</div>
               <div class="meme-card-content">
-                <div class="meme-name">沙特版骑马拔剑TikTok转场</div>
-                <div class="meme-desc">将全球爆火的Jungkook摩托车转场改编为阿拉伯纯血马+利剑+沙漠风光，被赞&ldquo;重新定义文化&rdquo;。</div>
+                <div class="meme-name">Eid al-Adha 宰牲节氛围</div>
+                <div class="meme-desc">5月27-30日宰牲节刚过，社交媒体仍充满家庭团聚、Qurbani和节日氛围内容</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 百万级播放</span>
-                  <span class="meme-stat trending">🔥 全球关注</span>
+                  <span class="meme-stat trending">&#128293; 节后余温</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://lovin.co/riyadh/en/news/saudi-tiktok-said-lets-make-it-iconic-and-dropped-horses-and-swords/" target="_blank">📰 Lovin Riyadh</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Saudi%20horse%20sword%20TikTok%20transition" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.tiktok.com/search?q=eid+al+adha+2026+saudi" target="_blank" class="meme-link">TikTok搜索</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>转场:</strong> 阿拉伯风格开场转场进入Xena直播间</li>
-                    <li><strong>UGC:</strong> &ldquo;用你的文化重新定义这个转场&rdquo;挑战</li>
-                    <li><strong>AR:</strong> 骑马&rarr;进入Xena虚拟场景的AR滤镜</li>
+                    <li><strong>节日问候：</strong>Xena节后回访主题&mdash;&mdash;&ldquo;Eid之后最想念的家人/朋友是谁？在Xena上问候TA&rdquo;</li>
                   </ul>
                 </div>
               </div>
@@ -1002,159 +640,87 @@
           </div>
         </div>
         <div class="sub-section">
-          <h4>📅 文化日历</h4>
+          <h4>&#128197; 文化日历</h4>
           <ul class="calendar-list">
-            <li class="calendar-item"><span class="cal-date">6/11</span><div class="cal-info"><strong>FIFA World Cup 开幕</strong> &mdash; 沙特vs西班牙/乌拉圭/佛得角</div></li>
-            <li class="calendar-item"><span class="cal-date">6/25-7/1</span><div class="cal-info"><strong>Saudi Film Festival</strong> &mdash; 第12届沙特电影节</div></li>
-            <li class="calendar-item"><span class="cal-date">6/27</span><div class="cal-info"><strong>WWE Night of Champions</strong> &mdash; 利雅得全球直播</div></li>
+            <li class="calendar-item"><span class="cal-date">5/27-30</span><div class="cal-info"><strong>Eid al-Adha (已过)</strong> &mdash; 宰牲节，节后影响持续</div></li>
+            <li class="calendar-item"><span class="cal-date">6/16</span><div class="cal-info"><strong>伊斯兰新年 1448H</strong> &mdash; 公共假期</div></li>
+            <li class="calendar-item"><span class="cal-date">6/25</span><div class="cal-info"><strong>Ashura日</strong> &mdash; 阿舒拉日</div></li>
           </ul>
-        </div>
-        <div class="sub-section">
-          <h4>💡 广告创意启发</h4>
-          <table class="creative-table">
-            <thead><tr><th>热点</th><th>素材方向</th><th>文案角度</th><th>渠道</th><th>风险</th></tr></thead>
-            <tbody>
-              <tr><td>Kentaaky Guys</td><td>神秘面具悬念营销</td><td>&ldquo;مين الشخص الغامض؟ اكتشف على Xena&rdquo;</td><td>TikTok/IG</td><td class="risk-low">低</td></tr>
-              <tr><td>World Cup</td><td>球迷社交看球</td><td>&ldquo;شجع الأخضر مع أصدقاء جدد 🏟️&rdquo;</td><td>X/Snap</td><td class="risk-low">低</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="sub-section">
-          <div class="warning-box">
-            <h4>⚠️ 避坑提醒</h4>
-            <ul>
-              <li>朝觐内容仅可用于正面温馨角度，严禁戏谑或商业化宗教仪式</li>
-              <li>沙特女性着装/行为话题敏感，素材需避免涉及</li>
-              <li>沙特男女社交互动规范仍较保守，场景设定需注意</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- === Egypt === -->
+    <!-- EGYPT -->
     <div class="country-card mena">
-      <div class="country-title" onclick="this.parentElement.classList.toggle('collapsed')">
-        <span class="flag">🇪🇬</span>
-        <h3>埃及 Egypt</h3>
-        <span class="toggle">▼</span>
-      </div>
+      <div class="country-title"><span class="flag">&#127466;&#127468;</span><h3>Egypt</h3><span class="toggle">&#9660;</span></div>
       <div class="country-body">
         <div class="sub-section">
-          <h4>🔥 本周热点 Top 5</h4>
+          <h4>&#128293; Top 5 热门话题</h4>
           <ul class="trend-list">
-            <li class="trend-item">
-              <span class="trend-rank hot">1</span>
-              <div class="trend-content">
-                <div class="trend-name">法老装世界杯阵容揭晓视频</div>
-                <div class="trend-desc">埃及足协采纳民间创意人方案，26名国脚穿法老古装在博物馆以&ldquo;雕像/壁画&rdquo;形式亮相，百万级传播。</div>
-                <div class="trend-meta"><span class="tag platform">Facebook</span><span class="tag platform">YouTube</span><span class="tag platform">X</span><span class="tag heat">🔥🔥🔥 百万级传播</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank hot">2</span>
-              <div class="trend-content">
-                <div class="trend-name">#مشيتي_حماقي (Hamaki新歌霸榜)</div>
-                <div class="trend-desc">Mohamed Hamaki新歌&ldquo;قالوا عني ايه&rdquo;空降YouTube Egypt #1，X上24小时霸榜。</div>
-                <div class="trend-meta"><span class="tag platform">YouTube</span><span class="tag platform">X</span><span class="tag platform">TikTok</span><span class="tag heat">🔥🔥🔥 YouTube #1</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">3</span>
-              <div class="trend-content">
-                <div class="trend-name">Egypt vs Russia 1-0 + 世界杯出征</div>
-                <div class="trend-desc">法老队新首都体育场1-0复仇俄罗斯，飞往美国备战6/15首战比利时。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Facebook</span><span class="tag heat">🔥🔥🔥</span><span class="tag rising">📈 上升中</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">4</span>
-              <div class="trend-content">
-                <div class="trend-name">AI恶搞Macron亚历山大之旅</div>
-                <div class="trend-desc">马克龙访问亚历山大后，网友用AI将他P进健身房、早餐店、理发店、足球场。</div>
-                <div class="trend-meta"><span class="tag platform">Instagram</span><span class="tag platform">Facebook</span><span class="tag heat">🔥🔥</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">5</span>
-              <div class="trend-content">
-                <div class="trend-name">TikToker &ldquo;أم مكة&rdquo; 洗钱案开庭</div>
-                <div class="trend-desc">知名TikToker Om Makkah 6/1首次开庭洗钱罪，此前因不当视频被判6个月缓刑。</div>
-                <div class="trend-meta"><span class="tag platform">Facebook</span><span class="tag platform">TikTok</span><span class="tag heat">🔥🔥</span><span class="tag rising">📈 上升中</span></div>
-              </div>
-            </li>
+            <li class="trend-item"><span class="trend-rank hot">1</span><div class="trend-content"><div class="trend-name">#توك_شو_من_ماسبيرو</div><div class="trend-desc">埃及国家电视台Maspero脱口秀节目引发讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">950分</span><span class="tag peak">&#128308; 峰值 19h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank hot">2</span><div class="trend-content"><div class="trend-name">#الاسهم_السعوديه</div><div class="trend-desc">沙特股市/TASI讨论在埃及也火热</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">893分</span><span class="tag peak">&#128308; 峰值 21h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">3</span><div class="trend-content"><div class="trend-name">#مشيتي_حماقي</div><div class="trend-desc">埃及巨星Mohamed Hamaki新歌/演出相关</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">525分</span><span class="tag rising">&#9650; 上升中</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">4</span><div class="trend-content"><div class="trend-name">#WWEClash</div><div class="trend-desc">WWE大赛在沙特举办，埃及粉丝热议</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">280分</span><span class="tag new">NEW</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">5</span><div class="trend-content"><div class="trend-name">#دوري_ابطال_اوروبا</div><div class="trend-desc">欧冠联赛讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">134分</span><span class="tag fading">&#9660; 下降中</span></div></div></li>
           </ul>
         </div>
         <div class="sub-section">
-          <h4>🎭 热梗 / 病毒内容</h4>
+          <h4>&#127775; 热梗 / 病毒内容</h4>
           <div class="meme-grid">
             <div class="meme-card">
-              <div class="meme-thumb">🏺</div>
-              <div class="meme-card-content">
-                <div class="meme-name">法老装世界杯阵容发布</div>
-                <div class="meme-desc">民间创意人Ashraf Rabie的方案被足协采纳，教练Hossam Hassan在博物馆巡视&ldquo;法老球员石像&rdquo;，&ldquo;民间创意&rarr;官方采纳&rdquo;本身也引爆传播。</div>
-                <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 百万级互动</span>
-                  <span class="meme-stat trending">🔥 全球体育媒体</span>
-                </div>
-                <div class="meme-links">
-                  <a class="meme-link" href="https://www.youm7.com/story/2026/5/31/7433179" target="_blank">📰 Youm7</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Egypt%20World%20Cup%20pharaoh%20reveal" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://www.youtube.com/results?search_query=Egypt+World+Cup+squad+pharaoh" target="_blank">▶️ YouTube</a>
-                </div>
-                <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
-                  <ul class="creative-suggest-list">
-                    <li><strong>换装:</strong> &ldquo;法老变身&rdquo;滤镜挑战用于Xena直播</li>
-                    <li><strong>致敬:</strong> 用你的文化风格介绍&ldquo;出战阵容&rdquo;</li>
-                    <li><strong>测试:</strong> &ldquo;你是哪位法老球员？&rdquo;性格测试+分享</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="meme-card">
-              <div class="meme-thumb">🤖</div>
-              <div class="meme-card-content">
-                <div class="meme-name">AI恶搞Macron的亚历山大之旅</div>
-                <div class="meme-desc">网民创造&ldquo;马克龙非官方行程&rdquo;：在Tribe Gym举重、Blue View Cafe吃豆泥、Elite理发店剪头发。核心笑点是把国际政治人物融入日常生活。</div>
-                <div class="meme-stats">
-                  <span class="meme-stat trending">🔥 Scoop Empire专题</span>
-                  <span class="meme-stat views">👁️ 数十万互动</span>
-                </div>
-                <div class="meme-links">
-                  <a class="meme-link" href="https://scoopempire.com/the-ai-way-how-alexandria-reimagined-macrons-visit/" target="_blank">📰 Scoop Empire</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Macron%20Alexandria%20Egypt%20meme" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://x.com/search?q=Macron%20Alexandria%20meme" target="_blank">🐦 X</a>
-                </div>
-                <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
-                  <ul class="creative-suggest-list">
-                    <li><strong>玩梗:</strong> &ldquo;如果马克龙来你的Xena直播间会怎样&rdquo;</li>
-                    <li><strong>本地化:</strong> 用AI生图把名人P进Xena场景</li>
-                    <li><strong>UGC:</strong> &ldquo;给名人安排一天Xena行程&rdquo;挑战</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="meme-card">
-              <div class="meme-thumb">✈️</div>
               <div class="meme-card-content">
                 <div class="meme-name">#EgyptIsCalling 旅行趋势</div>
-                <div class="meme-desc">TikTok旅行者在机场起舞、透过飞机窗拍金字塔，标签累计3400万+帖子，2026入境游客同比+20%。</div>
+                <div class="meme-desc">TikTok和IG上的旅行打卡趋势持续爆火，金字塔、红海跳舞视频带火埃及旅游，带动国际游客增长20%</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 34M+ 帖子</span>
-                  <span class="meme-stat trending">🔥 旅游+20% YoY</span>
+                  <span class="meme-stat views">&#128065; 34M+帖子</span>
+                  <span class="meme-stat trending">&#128293; 全球趋势</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://dailypostal.com/2026/04/02/egypt-is-calling-how-a-viral-tiktok-trend-is-changing-travel-in-2026/" target="_blank">📰 Daily Postal</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=%23EgyptIsCalling" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.tiktok.com/search?q=egyptiscalling" target="_blank" class="meme-link">TikTok搜索</a>
+                  <a href="https://dailypostal.com/2026/04/02/egypt-is-calling-how-a-viral-tiktok-trend-is-changing-travel-in-2026/" target="_blank" class="meme-link">详细报道</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>旅行:</strong> &ldquo;Egypt is calling, Xena is connecting&rdquo;</li>
-                    <li><strong>转场:</strong> 机场到金字塔&rarr;打开Xena的转场</li>
-                    <li><strong>社交:</strong> &ldquo;在埃及用Xena认识本地朋友&rdquo;</li>
+                    <li><strong>旅行社交：</strong>&ldquo;Xena is calling!&rdquo;模仿旅行打卡格式，拍摄Xena用户在地标前社交的场景</li>
+                    <li><strong>法老滤镜：</strong>埃及风法老主题虚拟礼物/背景，增强异域社交氛围</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="meme-card">
+              <div class="meme-card-content">
+                <div class="meme-name">Hamaki新歌热潮</div>
+                <div class="meme-desc">埃及流行天王Mohamed Hamaki新作品引发粉丝刷屏讨论</div>
+                <div class="meme-stats">
+                  <span class="meme-stat views">&#128065; 525分trending</span>
+                  <span class="meme-stat trending">&#128293; 阿拉伯流行乐</span>
+                </div>
+                <div class="meme-links">
+                  <a href="https://www.youtube.com/results?search_query=hamaki+2026" target="_blank" class="meme-link">YouTube搜索</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
+                  <ul class="creative-suggest-list">
+                    <li><strong>音乐直播：</strong>Xena埃及直播间做Hamaki新歌听歌会，粉丝互动交友</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="meme-card">
+              <div class="meme-card-content">
+                <div class="meme-name">研究生骗局维权潮</div>
+                <div class="meme-desc">#وعود_مزيفه_للماجستير 和 #طفح_الكيل_بالدكتوراه 揭露虚假硕博招生承诺，大量学生在线维权</div>
+                <div class="meme-stats">
+                  <span class="meme-stat trending">&#128293; 社会热点</span>
+                </div>
+                <div class="meme-links">
+                  <a href="https://x.com/search?q=%23%D9%88%D8%B9%D9%88%D8%AF_%D9%85%D8%B2%D9%8A%D9%81%D9%87_%D9%84%D9%84%D9%85%D8%A7%D8%AC%D8%B3%D8%AA%D9%8A%D8%B1" target="_blank" class="meme-link">X搜索</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
+                  <ul class="creative-suggest-list">
+                    <li><strong>避坑指南：</strong>规避此敏感话题，但可借&ldquo;学生社交&rdquo;方向做留学生交友内容</li>
                   </ul>
                 </div>
               </div>
@@ -1162,160 +728,90 @@
           </div>
         </div>
         <div class="sub-section">
-          <h4>📅 文化日历</h4>
+          <h4>&#128197; 文化日历</h4>
           <ul class="calendar-list">
-            <li class="calendar-item"><span class="cal-date">6/6</span><div class="cal-info"><strong>Egypt vs Brazil</strong> &mdash; 友谊赛(Ohio, USA)</div></li>
-            <li class="calendar-item"><span class="cal-date">6/15</span><div class="cal-info"><strong>Egypt vs Belgium</strong> &mdash; 世界杯首战(Seattle)</div></li>
-            <li class="calendar-item"><span class="cal-date">6/18</span><div class="cal-info"><strong>Islamic New Year</strong> &mdash; 宗教节日</div></li>
-            <li class="calendar-item"><span class="cal-date">6/30</span><div class="cal-info"><strong>Revolution Day</strong> &mdash; 国家纪念日</div></li>
+            <li class="calendar-item"><span class="cal-date">6/16</span><div class="cal-info"><strong>伊斯兰新年 1448H</strong></div></li>
+            <li class="calendar-item"><span class="cal-date">6/25</span><div class="cal-info"><strong>Ashura日</strong></div></li>
+            <li class="calendar-item"><span class="cal-date">6/30</span><div class="cal-info"><strong>6月30日革命纪念日</strong></div></li>
           </ul>
-        </div>
-        <div class="sub-section">
-          <h4>💡 广告创意启发</h4>
-          <table class="creative-table">
-            <thead><tr><th>热点</th><th>素材方向</th><th>文案角度</th><th>渠道</th><th>风险</th></tr></thead>
-            <tbody>
-              <tr><td>法老世界杯(百万级)</td><td>文化自豪+球迷社交</td><td>&ldquo;شجع الفراعنة مع أصدقاء جدد على Xena ⚽🏛️&rdquo;</td><td>TikTok/FB</td><td class="risk-low">低</td></tr>
-              <tr><td>#EgyptIsCalling</td><td>旅行社交场景</td><td>&ldquo;Egypt is calling, Xena is connecting 🇪🇬&rdquo;</td><td>TikTok/IG</td><td class="risk-low">低</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="sub-section">
-          <div class="warning-box">
-            <h4>⚠️ 避坑提醒</h4>
-            <ul>
-              <li>TikToker丑闻话题(Om Makkah等)不适合品牌关联</li>
-              <li>AI生图趋势可用但需确保不涉及政治人物的负面描绘</li>
-              <li>世界杯内容安全但需尊重国家队形象</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- === Turkey === -->
+    <!-- TURKEY -->
     <div class="country-card mena">
-      <div class="country-title" onclick="this.parentElement.classList.toggle('collapsed')">
-        <span class="flag">🇹🇷</span>
-        <h3>土耳其 Turkey</h3>
-        <span class="toggle">▼</span>
-      </div>
+      <div class="country-title"><span class="flag">&#127481;&#127479;</span><h3>Turkey</h3><span class="toggle">&#9660;</span></div>
       <div class="country-body">
         <div class="sub-section">
-          <h4>🔥 本周热点 Top 5</h4>
+          <h4>&#128293; Top 5 热门话题</h4>
           <ul class="trend-list">
-            <li class="trend-item">
-              <span class="trend-rank hot">1</span>
-              <div class="trend-content">
-                <div class="trend-name">CHP领导层危机 + K&#305;l&#305;&ccedil;daro&#287;lu &ldquo;放鸽子&rdquo;</div>
-                <div class="trend-desc">法院裁定&Ouml;zg&uuml;r &Ouml;zel当选无效后K&#305;l&#305;&ccedil;daro&#287;lu回归，尝试放飞和平鸽但鸽子拒绝起飞。政治宣言视频13.1M播放。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">YouTube</span><span class="tag heat">🔥🔥🔥 13.1M播放</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank hot">2</span>
-              <div class="trend-content">
-                <div class="trend-name">&ldquo;S&uuml;rpriz Mant&#305;&rdquo; (Mystery Dumpling) TikTok狂潮</div>
-                <div class="trend-desc">全球爆红开盒玩具，开出稀有闪光版时创作者的夸张尖叫视频席卷TikTok；多国发布安全警告(含有毒化学物质)。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag heat">🔥🔥🔥 全球趋势</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">3</span>
-              <div class="trend-content">
-                <div class="trend-name">Erdo&#287;an圣索菲亚古兰经诵读</div>
-                <div class="trend-desc">总统在圣索菲亚清真寺诵读古兰经视频获200万+反应，被视为伊斯兰身份强烈信号。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Instagram</span><span class="tag heat">🔥🔥🔥 2M+反应</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">4</span>
-              <div class="trend-content">
-                <div class="trend-name">Istanbul征服日573周年</div>
-                <div class="trend-desc">5/29征服日，Erdo&#287;an在Hali&ccedil;活动中跟唱&ldquo;T&uuml;rkler Geliyor&rdquo;画面广泛传播。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">YouTube</span><span class="tag heat">🔥🔥</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">5</span>
-              <div class="trend-content">
-                <div class="trend-name">土耳其经济数据周</div>
-                <div class="trend-desc">6/1 GDP、6/5通胀(前值32.37%)、6/11央行利率(37%)密集发布。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Google</span><span class="tag heat">🔥🔥</span><span class="tag rising">📈 上升中</span></div>
-              </div>
-            </li>
+            <li class="trend-item"><span class="trend-rank hot">1</span><div class="trend-content"><div class="trend-name">#KademeyeMüjdeVerin</div><div class="trend-desc">&ldquo;给Kademe一个好消息&rdquo;&#8212;土耳其民众呼吁改善某政策</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">544分</span><span class="tag peak">&#128308; 峰值 11h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank hot">2</span><div class="trend-content"><div class="trend-name">#bizimçocuklar</div><div class="trend-desc">&ldquo;我们的孩子们&rdquo;&#8212;热门电视剧讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">465分</span><span class="tag peak">&#128308; 峰值 10h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">3</span><div class="trend-content"><div class="trend-name">#UzakŞehir</div><div class="trend-desc">&ldquo;远方城市&rdquo;&#8212;新土耳其电视剧引发热议</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">393分</span><span class="tag rising">&#9650; 上升中</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">4</span><div class="trend-content"><div class="trend-name">#çeyrekaltın</div><div class="trend-desc">四分之一金币价格&#8212;土耳其人关注黄金价格波动</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">353分</span><span class="tag peak">&#128308; 峰值 8h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">5</span><div class="trend-content"><div class="trend-name">#millitakım</div><div class="trend-desc">土耳其国家队相关讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">222分</span><span class="tag rising">&#9650; 上升中</span></div></div></li>
           </ul>
         </div>
         <div class="sub-section">
-          <h4>🎭 热梗 / 病毒内容</h4>
+          <h4>&#127775; 热梗 / 病毒内容</h4>
           <div class="meme-grid">
             <div class="meme-card">
-              <div class="meme-thumb">🕊️</div>
               <div class="meme-card-content">
-                <div class="meme-name">K&#305;l&#305;&ccedil;daro&#287;lu 放鸽子失败</div>
-                <div class="meme-desc">在CHP总部拜节活动上放飞和平鸽&mdash;&mdash;但鸽子死死抓着他的手不飞，最后保镖一甩手鸽子就飞了。全国电视直播，瞬间成为最佳meme素材。</div>
+                <div class="meme-name">Alper Temel &mdash; 伊斯坦布尔最帅玉米摊主</div>
+                <div class="meme-desc">25岁的Karaköy玉米/栗子小贩凭高颜值成为全球网红，旅行社将他列入伊斯坦布尔旅游路线。被比作Salt Bae</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 13.1M 播放</span>
-                  <span class="meme-stat comments">💬 9K+评论 vs 4K赞</span>
+                  <span class="meme-stat followers">&#128101; 934K IG粉丝</span>
+                  <span class="meme-stat likes">&#10084; 5.7M TikTok赞</span>
+                  <span class="meme-stat trending">&#128293; 全球传播</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.arelinews.com/siyaset-gundemini-sarsan-rekor-kilicdaroglunun-videosu-131-milyon-izlenmeyi-devirdi" target="_blank">📰 AreliNews</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=K%C4%B1l%C4%B1%C3%A7daro%C4%9Flu%20g%C3%BCvercin" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://x.com/search?q=K%C4%B1l%C4%B1%C3%A7daro%C4%9Flu%20g%C3%BCvercin" target="_blank">🐦 X</a>
+                  <a href="https://www.tiktok.com/search?q=alper+temel+istanbul" target="_blank" class="meme-link">TikTok搜索</a>
+                  <a href="https://www.instagram.com/alpertemel04/" target="_blank" class="meme-link">Instagram</a>
+                  <a href="https://www.timesnownews.com/travel/istanbuls-viral-street-vendor-with-mills-and-boon-hero-looks-is-the-citys-hottest-attraction-article-154406668" target="_blank" class="meme-link">Times Now</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>搞笑:</strong> &ldquo;当你想结束直播但观众不让走&rdquo;</li>
-                    <li><strong>反转:</strong> 放飞鸽子&rarr;飞来一群Xena好友请求</li>
-                    <li><strong>互动:</strong> &ldquo;你的社交鸽子愿意飞吗？来Xena试试&rdquo;</li>
+                    <li><strong>颜值社交：</strong>&ldquo;寻找你城市的Alper Temel&rdquo;挑战&mdash;在Xena上分享你遇到的最帅/最美路人故事</li>
+                    <li><strong>街头偶遇：</strong>制作&ldquo;I visited [city] for the culture&rdquo;反转视频，culture变成Xena上的有趣好友</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">🥟</div>
               <div class="meme-card-content">
-                <div class="meme-name">S&uuml;rpriz Mant&#305; (Mystery Dumpling) 开箱狂潮</div>
-                <div class="meme-desc">竹笼盲盒里随机颜色减压球，开出&ldquo;稀有闪光版&rdquo;时TikToker疯狂尖叫。但含有毒化学物质，英国已有儿童受伤。</div>
+                <div class="meme-name">#İstanbulİstanbulluyor 城市影像</div>
+                <div class="meme-desc">X上发起的城市摄影运动：用户分享伊斯坦布尔的博斯普鲁斯海峡、渡轮、巷弄等日常美景</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 全球数亿播放</span>
-                  <span class="meme-stat comments">💬 BBC安全警告</span>
+                  <span class="meme-stat trending">&#128293; X trending</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://onedio.com/haber/tiktok-ta-yeni-cilginlik-surpriz-mantiyi-bulunca-kendilerini-yerden-yere-atiyorlar-1362330" target="_blank">📰 Onedio</a>
-                  <a class="meme-link" href="https://www.bbc.co.uk/newsround/articles/c1m21xgpjd0o" target="_blank">📰 BBC</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=s%C3%BCrpriz%20mant%C4%B1%20viral" target="_blank">🎵 TikTok</a>
+                  <a href="https://x.com/search?q=%23%C4%B0stanbul%C4%B0stanbulluyor" target="_blank" class="meme-link">X搜索</a>
+                  <a href="https://isthaberler.com/istanbul-istanbulluyor-akimi-buyuyor-sosyal-medya-sehrin-kareleriyle-doldu/" target="_blank" class="meme-link">报道</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>开箱:</strong> &ldquo;Xena礼物盲盒开箱反应&rdquo;模仿</li>
-                    <li><strong>挑战:</strong> &ldquo;用你的反应换Xena钻石&rdquo;互动</li>
-                    <li><strong>反转:</strong> 夸张开箱&rarr;打开的是Xena匹配到新朋友</li>
+                    <li><strong>城市打卡：</strong>Xena版&ldquo;你的城市在___&rdquo;话题，鼓励用户分享城市日常+交友</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">🥯</div>
               <div class="meme-card-content">
-                <div class="meme-name">Erdo&#287;an &ldquo;Rize Simidi&rdquo; 拜节温馨互动</div>
-                <div class="meme-desc">拜节早晨给记者发simit和巧克力，被问&ldquo;Rize的最好吧？&rdquo;笑答&ldquo;不是不是&hellip;每个城市的都不一样&rdquo;，充满人情味。</div>
+                <div class="meme-name">#bizimçocuklar 热门电视剧</div>
+                <div class="meme-desc">&ldquo;我们的孩子们&rdquo;土耳其新剧集引发大量社交讨论和二创</div>
                 <div class="meme-stats">
-                  <span class="meme-stat trending">🔥 多家媒体报道</span>
+                  <span class="meme-stat views">&#128065; 465分trending</span>
+                  <span class="meme-stat trending">&#128293; 10h持续</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://habertut.com/2026/05/27/cumhurbaskani-erdoganin-rize-simidi-yaniti-herkesi-guldurdu/" target="_blank">📰 Habertut</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Erdogan%20Rize%20simit%20bayram" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://x.com/search?q=Erdo%C4%9Fan%20simit%20bayram" target="_blank">🐦 X</a>
+                  <a href="https://www.youtube.com/results?search_query=bizim+%C3%A7ocuklar+dizi" target="_blank" class="meme-link">YouTube搜索</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>美食:</strong> &ldquo;哪个城市simit最好吃？&rdquo; Xena投票</li>
-                    <li><strong>温馨:</strong> 节日分享食物&rarr;分享Xena聊天的温暖</li>
-                    <li><strong>PK:</strong> 各城市特色小吃直播PK</li>
+                    <li><strong>追剧社交：</strong>Xena土耳其剧讨论房间，追剧+交友双重体验</li>
                   </ul>
                 </div>
               </div>
@@ -1323,131 +819,86 @@
           </div>
         </div>
         <div class="sub-section">
-          <h4>📅 文化日历</h4>
+          <h4>&#128197; 文化日历</h4>
           <ul class="calendar-list">
-            <li class="calendar-item"><span class="cal-date">6/1</span><div class="cal-info"><strong>Q1 GDP数据发布</strong> &mdash; 经济关注</div></li>
-            <li class="calendar-item"><span class="cal-date">6/5</span><div class="cal-info"><strong>5月通胀数据</strong> &mdash; 前值32.37%</div></li>
-            <li class="calendar-item"><span class="cal-date">6/11</span><div class="cal-info"><strong>央行利率决议</strong> &mdash; 现37%；FIFA World Cup开幕</div></li>
+            <li class="calendar-item"><span class="cal-date">5/27-30</span><div class="cal-info"><strong>Kurban Bayramı (已过)</strong> &mdash; 宰牲节</div></li>
+            <li class="calendar-item"><span class="cal-date">6/16</span><div class="cal-info"><strong>伊斯兰新年</strong></div></li>
           </ul>
-        </div>
-        <div class="sub-section">
-          <div class="warning-box">
-            <h4>⚠️ 避坑提醒</h4>
-            <ul>
-              <li>CHP政治危机严禁在广告中涉及&mdash;&mdash;高度对立、催泪弹场景</li>
-              <li>Erdo&#287;an相关内容需极度谨慎，土耳其侮辱总统可入刑</li>
-              <li>经济话题(通胀/贬值)敏感，避免暗示经济困难</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- === UAE === -->
+    <!-- UAE -->
     <div class="country-card mena">
-      <div class="country-title" onclick="this.parentElement.classList.toggle('collapsed')">
-        <span class="flag">🇦🇪</span>
-        <h3>阿联酋 UAE</h3>
-        <span class="toggle">▼</span>
-      </div>
+      <div class="country-title"><span class="flag">&#127462;&#127466;</span><h3>UAE</h3><span class="toggle">&#9660;</span></div>
       <div class="country-body">
         <div class="sub-section">
-          <h4>🔥 本周热点 Top 3</h4>
+          <h4>&#128293; Top 5 热门话题</h4>
           <ul class="trend-list">
-            <li class="trend-item">
-              <span class="trend-rank hot">1</span>
-              <div class="trend-content">
-                <div class="trend-name">Bu Sunaida 机器人清真寺做礼拜</div>
-                <div class="trend-desc">穿kandura的人形机器人参加迪拜清真寺Eid礼拜，引发科技vs宗教大辩论。此前adhan视频1.3M+播放。</div>
-                <div class="trend-meta"><span class="tag platform">Instagram</span><span class="tag platform">TikTok</span><span class="tag heat">🔥🔥🔥 数百万views</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank hot">2</span>
-              <div class="trend-content">
-                <div class="trend-name">Dubai Mall Dress Code视频</div>
-                <div class="trend-desc">加拿大博主穿Emirati传统长袍倡导尊重着装，1M+ TikTok播放，Sheikh Hamdan太子点赞。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">Instagram</span><span class="tag heat">🔥🔥🔥 1M+播放</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">3</span>
-              <div class="trend-content">
-                <div class="trend-name">TikTok Eid City Guide</div>
-                <div class="trend-desc">#WhereToEat #WhereToVisit标签下创作者推荐隐藏咖啡馆、秘密海滩和活动，TikTok变社区城市指南。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag heat">🔥🔥</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
+            <li class="trend-item"><span class="trend-rank hot">1</span><div class="trend-content"><div class="trend-name">#IPLFinal</div><div class="trend-desc">IPL决赛RCB vs GT &mdash; 阿联酋印度侨民社区全网沸腾</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">1132分</span><span class="tag peak">&#128308; 峰值 24h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank hot">2</span><div class="trend-content"><div class="trend-name">#WWEClash</div><div class="trend-desc">WWE大赛在沙特举行，阿联酋粉丝密切关注</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">634分</span><span class="tag peak">&#128308; 峰值 15h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">3</span><div class="trend-content"><div class="trend-name">#TLPrejects_AbrahamAccords</div><div class="trend-desc">关于Abraham Accords的地缘政治讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">600分</span><span class="tag peak">&#128308; 峰值 14h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">4</span><div class="trend-content"><div class="trend-name">#PSGARS</div><div class="trend-desc">PSG vs Arsenal欧冠比赛讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">232分</span><span class="tag fading">&#9660; 下降中</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">5</span><div class="trend-content"><div class="trend-name">#صباح_الخير</div><div class="trend-desc">&ldquo;早安&rdquo;&mdash;每日问候标签</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">230分</span><span class="tag fading">&#9660; 日常</span></div></div></li>
           </ul>
         </div>
         <div class="sub-section">
-          <h4>🎭 热梗 / 病毒内容</h4>
+          <h4>&#127775; 热梗 / 病毒内容</h4>
           <div class="meme-grid">
             <div class="meme-card">
-              <div class="meme-thumb">🤖</div>
               <div class="meme-card-content">
-                <div class="meme-name">Bu Sunaida 机器人Eid礼拜</div>
-                <div class="meme-desc">中国宇树G1机器人穿白色kandura+头巾，乘豪华SUV到清真寺与信徒并肩礼拜，支持者与反对者激烈辩论。</div>
+                <div class="meme-name">&ldquo;I Know Who Protects Us&rdquo; 网红统一口径</div>
+                <div class="meme-desc">迪拜网红集体发布几乎一模一样的短视频：&ldquo;你住迪拜不怕吗？&rdquo;→ 展示领导人照片 → &ldquo;不怕，因为我知道谁保护我们&rdquo;。引发&ldquo;被操控 vs 自发&rdquo;争议</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 数百万views</span>
-                  <span class="meme-stat views">👁️ Adhan 1.3M+</span>
+                  <span class="meme-stat views">&#128065; 7M+播放(头部)</span>
+                  <span class="meme-stat trending">&#128293; 国际争议</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://gulfnews.com/uae/watch-dubais-viral-humanoid-robot-joins-uae-worshippers-for-eid-prayer-at-mosque-1.500557110" target="_blank">📰 Gulf News</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=robot%20prayer%20Dubai%20Eid" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://www.youtube.com/results?search_query=robot+prayer+mosque+Dubai" target="_blank">▶️ YouTube</a>
+                  <a href="https://www.tiktok.com/search?q=i+know+who+protects+us+dubai" target="_blank" class="meme-link">TikTok搜索</a>
+                  <a href="https://www.breezyscroll.com/world/middle-east/dubai-influencers-spark-online-backlash-over-viral-i-know-who-protects-us-posts/" target="_blank" class="meme-link">详细报道</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>科技:</strong> &ldquo;连机器人都来社交了，你还犹豫？&rdquo;</li>
-                    <li><strong>反转:</strong> 机器人做礼拜&rarr;打开Xena开始聊天</li>
-                    <li><strong>节日:</strong> &ldquo;Eid Mubarak from your AI friend&rdquo;</li>
+                    <li><strong>安全社交：</strong>借用&ldquo;谁保护你&rdquo;的温暖面向&mdash;&mdash;&ldquo;在Xena上谁给了你安全感？&rdquo;征集暖心社交故事</li>
+                    <li><strong>&#9888; 注意：</strong>规避政治面向，仅取情感层面做素材</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">👗</div>
               <div class="meme-card-content">
-                <div class="meme-name">Dubai Mall Dress Code文化讨论</div>
-                <div class="meme-desc">加拿大博主Jacquelyn May穿传统长袍：&ldquo;这里不是维密时装秀&rdquo;，由非阿拉伯外国人发起文化尊重倡议尤其打动本地人。</div>
+                <div class="meme-name">IPL 2026 决赛 &mdash; RCB卫冕</div>
+                <div class="meme-desc">RCB击败GT实现IPL两连冠，Kohli和Anushka Sharma赛后跳舞视频刷屏。阿联酋印度侨民社区狂欢</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 1M+ TikTok</span>
-                  <span class="meme-stat likes">❤️ 31K+ IG赞</span>
+                  <span class="meme-stat views">&#128065; 1132分X trending</span>
+                  <span class="meme-stat trending">&#128293; 24h持续</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://gulfnews.com/uae/dubai-mall-dress-code-what-inspired-viral-video-with-1-million-views-and-approval-from-sheikh-hamdan-1.500150859" target="_blank">📰 Gulf News</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Dubai%20Mall%20dress%20code%20abaya" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.youtube.com/results?search_query=IPL+2026+final+RCB+celebration" target="_blank" class="meme-link">YouTube搜索</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>礼仪:</strong> &ldquo;在Xena展示你最优雅的一面&rdquo;</li>
-                    <li><strong>文化:</strong> 各国传统服饰直播展示挑战</li>
-                    <li><strong>互动:</strong> &ldquo;尊重文化从穿搭开始&rdquo;话题直播</li>
+                    <li><strong>体育社交：</strong>&ldquo;和Xena好友一起看决赛!&rdquo;制作赛后庆祝reaction视频</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">🍽️</div>
               <div class="meme-card-content">
-                <div class="meme-name">TikTok Eid City Guide</div>
-                <div class="meme-desc">Eid长假期间，TikTok成为城市指南&mdash;&mdash;Haya Kaabar等头部创作者推荐隐藏咖啡馆、网红餐厅、秘密海滩。</div>
+                <div class="meme-name">WWE Clash 大赛</div>
+                <div class="meme-desc">WWE在沙特举办大型赛事，中东粉丝热议不断</div>
                 <div class="meme-stats">
-                  <span class="meme-stat trending">🔥 TikTok官方推广</span>
+                  <span class="meme-stat views">&#128065; 634分trending</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://communicateonline.me/news/from-hidden-cafes-to-secret-beach-spots-tiktoks-viral-eid-guide-for-the-uae/" target="_blank">📰 Communicate</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Dubai%20Eid%20guide%20hidden%20gems" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.youtube.com/results?search_query=WWE+Clash+2026" target="_blank" class="meme-link">YouTube搜索</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>探店:</strong> &ldquo;跟Xena主播探索隐藏美食&rdquo;直播</li>
-                    <li><strong>推荐:</strong> &ldquo;你的周末指南by Xena&rdquo;内容系列</li>
-                    <li><strong>匹配:</strong> &ldquo;在Xena找本地人带你玩&rdquo;广告</li>
+                    <li><strong>格斗热血：</strong>WWE主题Xena直播间，猜测比赛结果+实时互动</li>
                   </ul>
                 </div>
               </div>
@@ -1455,83 +906,81 @@
           </div>
         </div>
         <div class="sub-section">
-          <h4>📅 文化日历</h4>
+          <h4>&#128197; 文化日历</h4>
           <ul class="calendar-list">
-            <li class="calendar-item"><span class="cal-date">6/11</span><div class="cal-info"><strong>FIFA World Cup开幕</strong> &mdash; 大量外籍球迷在UAE</div></li>
-            <li class="calendar-item"><span class="cal-date">6&ndash;8月</span><div class="cal-info"><strong>夏季高温40&deg;C+</strong> &mdash; 室内活动/staycation季</div></li>
+            <li class="calendar-item"><span class="cal-date">6/16</span><div class="cal-info"><strong>伊斯兰新年 1448H</strong></div></li>
           </ul>
-        </div>
-        <div class="sub-section">
-          <div class="warning-box">
-            <h4>⚠️ 避坑提醒</h4>
-            <ul>
-              <li>机器人宗教场所话题需谨慎&mdash;&mdash;仅从科技创新角度引用</li>
-              <li>阿联酋对社交媒体言论有严格法律，避免不敬内容</li>
-              <li>&ldquo;I Know Who Protects Us&rdquo;趋势涉及地缘政治，完全避开</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- === Iraq === -->
+    <!-- IRAQ -->
     <div class="country-card mena">
-      <div class="country-title" onclick="this.parentElement.classList.toggle('collapsed')">
-        <span class="flag">🇮🇶</span>
-        <h3>伊拉克 Iraq</h3>
-        <span class="toggle">▼</span>
-      </div>
+      <div class="country-title"><span class="flag">&#127470;&#127478;</span><h3>Iraq</h3><span class="toggle">&#9660;</span></div>
       <div class="country-body">
         <div class="sub-section">
-          <h4>🔥 本周热点 Top 3</h4>
+          <h4>&#128293; Top 5 热门话题</h4>
           <ul class="trend-list">
-            <li class="trend-item">
-              <span class="trend-rank hot">1</span>
-              <div class="trend-content">
-                <div class="trend-name">Kawthar Bashar荣誉谋杀案</div>
-                <div class="trend-desc">15岁少女因拒绝包办婚姻被家族杀害，引发全球对伊拉克女性权益关注。⛔ 极度敏感，禁止商业化。</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">X</span><span class="tag heat">🔥🔥🔥 国际报道</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">2</span>
-              <div class="trend-content">
-                <div class="trend-name">US-Iran Meme War (Lego Videos)</div>
-                <div class="trend-desc">伊朗AI乐高风格rap视频在伊拉克什叶派社群传播，对立标签达1.22亿触达。⛔ 地缘政治，禁止商业化。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Telegram</span><span class="tag heat">🔥🔥🔥 122.5M触达</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">3</span>
-              <div class="trend-content">
-                <div class="trend-name">Ghadir Week + 宰牲节后日常</div>
-                <div class="trend-desc">纳杰夫准备Ghadir Week庆祝；Eid后大量家庭聚会、烤肉、走亲内容。</div>
-                <div class="trend-meta"><span class="tag platform">Facebook</span><span class="tag platform">TikTok</span><span class="tag heat">🔥🔥</span><span class="tag rising">📈 上升中</span></div>
-              </div>
-            </li>
+            <li class="trend-item"><span class="trend-rank hot">1</span><div class="trend-content"><div class="trend-name">伊朗-以色列冲突 梗文化</div><div class="trend-desc">伊朗官方账号使用乐高动画、Gen-Z梗格式做信息战传播，被称为&ldquo;第一场全球梗战争&rdquo;</div><div class="trend-meta"><span class="tag platform">X/TikTok</span><span class="tag heat">高热</span><span class="tag peak">&#128308; 持续</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">2</span><div class="trend-content"><div class="trend-name">Abu Jannah网红被调查</div><div class="trend-desc">伊拉克知名送礼网红因奖品资金来源受到司法调查</div><div class="trend-meta"><span class="tag platform">社交媒体</span><span class="tag heat">热点</span><span class="tag new">NEW</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">3</span><div class="trend-content"><div class="trend-name">出租车司机&ldquo;Saddam&rdquo;乌龙</div><div class="trend-desc">外国游客误叫伊拉克出租车司机&ldquo;Saddam&rdquo;，尴尬视频全网热传</div><div class="trend-meta"><span class="tag platform">Instagram/TikTok</span><span class="tag heat">热传</span><span class="tag rising">&#9650; 上升中</span></div></div></li>
           </ul>
         </div>
         <div class="sub-section">
-          <h4>🎭 热梗 / 病毒内容</h4>
+          <h4>&#127775; 热梗 / 病毒内容</h4>
           <div class="meme-grid">
             <div class="meme-card">
-              <div class="meme-thumb">🏠</div>
               <div class="meme-card-content">
-                <div class="meme-name">宰牲节后伊拉克日常生活内容</div>
-                <div class="meme-desc">Eid后TikTok和Facebook上大量分享节日家庭聚会、烤肉、走亲访友的日常内容，幽默段子和穿搭分享活跃。</div>
+                <div class="meme-name">出租车司机&ldquo;Saddam&rdquo;名字乌龙</div>
+                <div class="meme-desc">立陶宛游客混淆了出租车司机的名字Hossein，叫成了Saddam。司机纠正后双方大笑</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 百万级日常内容</span>
+                  <span class="meme-stat trending">&#128293; IG/TikTok热传</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=%D8%B9%D9%8A%D8%AF%20%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%202026" target="_blank">🎵 TikTok搜索</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=%D8%B9%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B6%D8%AD%D9%89%20%D8%B9%D8%B1%D8%A7%D9%82" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.tiktok.com/search?q=saddam+taxi+driver+iraq" target="_blank" class="meme-link">TikTok搜索</a>
+                  <a href="https://www.timesnownews.com/viral/woman-calls-iraqi-taxi-driver-saddam-by-mistake-viral-clip-triggers-mixed-reactions-watch-article-153900688" target="_blank" class="meme-link">Times Now</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>家庭:</strong> &ldquo;节后想念家人？来Xena视频通话&rdquo;</li>
-                    <li><strong>美食:</strong> Eid烤肉分享&rarr;Xena直播美食互动</li>
-                    <li><strong>社交:</strong> &ldquo;节日结束但友谊不停&rdquo; Xena广告</li>
+                    <li><strong>名字趣事：</strong>&ldquo;在Xena上被叫错名字最尴尬的一次&rdquo;话题，轻松搞笑社交切入</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="meme-card">
+              <div class="meme-card-content">
+                <div class="meme-name">伊朗乐高军事梗 &mdash; 全球梗战争</div>
+                <div class="meme-desc">伊朗宣传机构用乐高小人动画展示军事行动，以Gen-Z语言传播，被称为&ldquo;history&rsquo;s first meme war&rdquo;</div>
+                <div class="meme-stats">
+                  <span class="meme-stat views">&#128065; 百万级播放</span>
+                  <span class="meme-stat trending">&#128293; 全球讨论</span>
+                </div>
+                <div class="meme-links">
+                  <a href="https://thepressunited.com/updates/the-first-global-meme-war-is-over-america-lost/" target="_blank" class="meme-link">详细分析</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
+                  <ul class="creative-suggest-list">
+                    <li><strong>&#9888; 禁区：</strong>严格规避此话题，涉及地缘政治敏感内容，不适合品牌借势</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="meme-card">
+              <div class="meme-card-content">
+                <div class="meme-name">Abu Jannah送礼网红被查</div>
+                <div class="meme-desc">伊拉克网红Abu Jannah因在社交媒体上大量送车送现金，被当局调查资金来源</div>
+                <div class="meme-stats">
+                  <span class="meme-stat trending">&#128293; 社会关注</span>
+                </div>
+                <div class="meme-links">
+                  <a href="https://shafaq.com/en/Security/Iraqi-influencer-faces-probe-over-funding-behind-social-media-prizes" target="_blank" class="meme-link">Shafaq News</a>
+                </div>
+                <div class="creative-suggest">
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
+                  <ul class="creative-suggest-list">
+                    <li><strong>合规送礼：</strong>Xena可借鉴送礼互动模式但需透明合规，虚拟礼物比实物更安全</li>
                   </ul>
                 </div>
               </div>
@@ -1539,21 +988,11 @@
           </div>
         </div>
         <div class="sub-section">
-          <h4>📅 文化日历</h4>
+          <h4>&#128197; 文化日历</h4>
           <ul class="calendar-list">
-            <li class="calendar-item"><span class="cal-date">6/4</span><div class="cal-info"><strong>Ghadir Week开始</strong> &mdash; 什叶派重要节日</div></li>
-            <li class="calendar-item"><span class="cal-date">6/11</span><div class="cal-info"><strong>FIFA World Cup开幕</strong> &mdash; 球迷高关注</div></li>
+            <li class="calendar-item"><span class="cal-date">6/16</span><div class="cal-info"><strong>伊斯兰新年 1448H</strong></div></li>
+            <li class="calendar-item"><span class="cal-date">6/25</span><div class="cal-info"><strong>Ashura日</strong> &mdash; 什叶派重要纪念日(伊拉克尤为重要)</div></li>
           </ul>
-        </div>
-        <div class="sub-section">
-          <div class="warning-box">
-            <h4>⚠️ 避坑提醒</h4>
-            <ul>
-              <li>荣誉谋杀(Kawthar Bashar)绝对禁止用于任何广告素材</li>
-              <li>US-Iran冲突/PMF话题绝对禁止</li>
-              <li>安全可用话题：Eid家庭温暖、足球(世界杯)、美食文化、青年社交</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
@@ -1561,138 +1000,88 @@
   </div>
 </div>
 
-
-<!-- ==================== REGION: SOUTH ASIA ==================== -->
-<div class="region-section" id="region-sa">
+<!-- ==================== SOUTH ASIA ==================== -->
+<div class="region-section" id="sa-section">
   <div class="region-header">
-    <span class="region-tag sa">🏔️ 南亚</span>
-    <h2>South Asia</h2>
+    <span class="region-tag sa">&#127752; 南亚</span>
+    <h2>Pakistan &middot; India</h2>
   </div>
   <div class="country-grid">
 
-    <!-- === Pakistan === -->
+    <!-- PAKISTAN -->
     <div class="country-card sa">
-      <div class="country-title" onclick="this.parentElement.classList.toggle('collapsed')">
-        <span class="flag">🇵🇰</span>
-        <h3>巴基斯坦 Pakistan</h3>
-        <span class="toggle">▼</span>
-      </div>
+      <div class="country-title"><span class="flag">&#127477;&#127472;</span><h3>Pakistan</h3><span class="toggle">&#9660;</span></div>
       <div class="country-body">
         <div class="sub-section">
-          <h4>🔥 本周热点 Top 5</h4>
+          <h4>&#128293; Top 5 热门话题</h4>
           <ul class="trend-list">
-            <li class="trend-item">
-              <span class="trend-rank hot">1</span>
-              <div class="trend-content">
-                <div class="trend-name">Cockroach Awaam Party (CAP)</div>
-                <div class="trend-desc">印度CJP运动跨境传播，多个本土化模仿账号涌现(Cockroach Awami Party等)，绿白配色讽刺各党派。</div>
-                <div class="trend-meta"><span class="tag platform">Instagram</span><span class="tag platform">TikTok</span><span class="tag platform">X</span><span class="tag heat">🔥🔥🔥 跨境现象</span><span class="tag rising">📈 上升中</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank hot">2</span>
-              <div class="trend-content">
-                <div class="trend-name">Eid ul-Adha网红争议</div>
-                <div class="trend-desc">Jannat Mirza(25.6M粉丝)因宰牲肉包装视频被骂不卫生；Sistrology用宝莱坞歌庆祝被嘲&ldquo;Eid hai ya Diwali?&rdquo;</div>
-                <div class="trend-meta"><span class="tag platform">TikTok</span><span class="tag platform">Instagram</span><span class="tag heat">🔥🔥🔥 25.6M粉丝基础</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">3</span>
-              <div class="trend-content">
-                <div class="trend-name">Hajj 2026名人朝觐</div>
-                <div class="trend-desc">Wasim Akram用快速保龄球动作投石驱魔爆火；Waseem Badami诵经视频感动数十万人。</div>
-                <div class="trend-meta"><span class="tag platform">Instagram</span><span class="tag platform">YouTube</span><span class="tag heat">🔥🔥🔥 1.7M朝觐者</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">4</span>
-              <div class="trend-content">
-                <div class="trend-name">GB大选风暴 (#ShigarMainTeerChaleyGa)</div>
-                <div class="trend-desc">6/7吉尔吉特-巴尔蒂斯坦选举倒计时，PTI领袖被阻竞选，社交媒体被严格监控。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Facebook</span><span class="tag heat">🔥🔥</span><span class="tag rising">📈 上升中</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">5</span>
-              <div class="trend-content">
-                <div class="trend-name">PTI政治话题霸榜X</div>
-                <div class="trend-desc">#خان_کے_سائے_سے_بھی_خوف 连续24小时X趋势榜首；Trump提Asim Munir不提PM引爆讨论。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag heat">🔥🔥 24小时不落榜</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
+            <li class="trend-item"><span class="trend-rank hot">1</span><div class="trend-content"><div class="trend-name">#PeaceDiplomacyOfCDF</div><div class="trend-desc">CDF和平外交&#8212;巴基斯坦调解美国-伊朗关系相关讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">1173分</span><span class="tag peak">&#128308; 峰值 24h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank hot">2</span><div class="trend-content"><div class="trend-name">#ShigarMainTeerChaleyGa</div><div class="trend-desc">Shigar地区射箭节/文化活动引发关注</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">1020分</span><span class="tag peak">&#128308; 峰值 21h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">3</span><div class="trend-content"><div class="trend-name">#TLPrejects_AbrahamAccords</div><div class="trend-desc">巴基斯坦拒绝特朗普要求加入Abraham Accords</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">676分</span><span class="tag peak">&#128308; 峰值 14h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">4</span><div class="trend-content"><div class="trend-name">#SerbiaConfirmsIndianShame</div><div class="trend-desc">塞尔维亚相关国际事件引发巴印网民交锋</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">567分</span><span class="tag rising">&#9650; 上升中</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">5</span><div class="trend-content"><div class="trend-name">#50KM_not_EV</div><div class="trend-desc">巴基斯坦电动车政策讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">421分</span><span class="tag new">NEW</span></div></div></li>
           </ul>
         </div>
         <div class="sub-section">
-          <h4>🎭 热梗 / 病毒内容</h4>
+          <h4>&#127775; 热梗 / 病毒内容</h4>
           <div class="meme-grid">
             <div class="meme-card">
-              <div class="meme-thumb">🏏</div>
               <div class="meme-card-content">
-                <div class="meme-name">Wasim Akram &ldquo;Clean Bowled Satan&rdquo;</div>
-                <div class="meme-desc">传奇快速投球手在投石驱魔仪式中用标志性保龄球动作投掷石子，投完做出击杀庆祝。网友称他&ldquo;clean bowled evil itself&rdquo;。</div>
+                <div class="meme-name">&ldquo;At the Request of Pakistan&rdquo; 全球梗</div>
+                <div class="meme-desc">特朗普反复说&ldquo;at the request of Pakistan&rdquo;来解释外交决策，被全球网友变成万能借口梗模板。前以色列发言人David Keyes发了50+条相关推文</div>
                 <div class="meme-stats">
-                  <span class="meme-stat trending">🔥 多家媒体报道</span>
-                  <span class="meme-stat views">👁️ 多平台疯传</span>
+                  <span class="meme-stat views">&#128065; 全球级传播</span>
+                  <span class="meme-stat trending">&#128293; 跨国爆火</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.bolnews.com/latest-news/wasim-akrams-viral-hajj-video-amuses-fans-online/" target="_blank">📰 Bol News</a>
-                  <a class="meme-link" href="https://en.dailypakistan.com.pk/27-May-2026/wasim-akram-clean-bowled-satan-during-hajj-ritual-video-goes-viral" target="_blank">📰 Daily PK</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Wasim%20Akram%20Hajj%20bowling" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://x.com/search?q=Wasim%20Akram%20Hajj" target="_blank">🐦 X</a>
+                  <a href="https://x.com/search?q=%22at+the+request+of+Pakistan%22" target="_blank" class="meme-link">X搜索</a>
+                  <a href="https://tribune.com.pk/story/2607392/how-pakistan-became-internets-latest-meme-obsession" target="_blank" class="meme-link">Express Tribune</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>互动:</strong> 用投球姿势PK互动直播</li>
-                    <li><strong>挑战:</strong> &ldquo;用你的才艺征服世界&rdquo;才艺展示</li>
-                    <li><strong>模仿:</strong> Xena视频聊天模仿名人经典动作</li>
+                    <li><strong>万能借口梗：</strong>&ldquo;At the request of my Xena friends, I&rsquo;m staying up late to chat!&rdquo;制作趣味借口模板视频</li>
+                    <li><strong>&#9888; 注意：</strong>保持轻松幽默，避免涉及美伊政治面向</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">🥩</div>
               <div class="meme-card-content">
-                <div class="meme-name">Jannat Mirza宰牲肉包装翻车</div>
-                <div class="meme-desc">巴基斯坦第一TikToker穿黑T恤戴重金手镯包装生肉一边整理头发，网友批评不卫生炫富。她毫不在意又发了与肉合影照。</div>
+                <div class="meme-name">Cockroach Awaam Party (蟑螂人民党)</div>
+                <div class="meme-desc">从印度Cockroach Janta Party延伸到巴基斯坦的讽刺政治梗运动。绿白配色logo，模仿竞选海报，表达青年对失业和政治的不满</div>
                 <div class="meme-stats">
-                  <span class="meme-stat followers">👥 25.6M TikTok</span>
-                  <span class="meme-stat followers">👥 6M Instagram</span>
+                  <span class="meme-stat views">&#128065; 百万级播放</span>
+                  <span class="meme-stat trending">&#128293; 跨境传播</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://tribune.com.pk/story/2610320/jannat-mirza-faces-backlash-over-eidul-azha-meat-packing-video" target="_blank">📰 Express Tribune</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Jannat%20Mirza%20Eid%20meat" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.tiktok.com/search?q=cockroach+awaam+party" target="_blank" class="meme-link">TikTok搜索</a>
+                  <a href="https://thepakistan.pk/cockroach-awaam-party/" target="_blank" class="meme-link">详细报道</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>搞笑:</strong> &ldquo;Eid vlog翻车现场&rdquo;情景剧模板</li>
-                    <li><strong>教学:</strong> Xena直播教你正确的节日礼仪</li>
-                    <li><strong>分享:</strong> 用Xena和朋友分享你的Eid趣事</li>
+                    <li><strong>&#9888; 高敏感：</strong>政治讽刺话题，品牌不宜直接借势。但可参考其&ldquo;UGC+幽默+社会议题&rdquo;的传播机制</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">💃</div>
               <div class="meme-card-content">
-                <div class="meme-name">Sistrology &ldquo;Eid hai ya Diwali?&rdquo;</div>
-                <div class="meme-desc">顶流家庭网红在宰牲节发布全家跳宝莱坞歌曲&ldquo;Pappu Can&rsquo;t Dance&rdquo;的Reel，被嘲&ldquo;这是Eid还是Diwali？&rdquo;。</div>
+                <div class="meme-name">RIP Amitabh Bachchan 假死梗</div>
+                <div class="meme-desc">Instagram上大量假冒&ldquo;Amitabh Bachchan去世&rdquo;的meme，实际是bait-and-switch搞笑：&ldquo;他12年级毕业了(1960)&rdquo;</div>
                 <div class="meme-stats">
-                  <span class="meme-stat followers">👥 600万+跨平台</span>
-                  <span class="meme-stat trending">🔥 Pakistan Today报道</span>
+                  <span class="meme-stat views">&#128065; 百万级播放</span>
+                  <span class="meme-stat trending">&#128293; IG刷屏</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.pakistantoday.com.pk/2026/05/29/eid-hai-ya-diwali-internet-roasts-sistrology-family-for-celebrating-eid-with-bollywood-dance" target="_blank">📰 PK Today</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Sistrology%20Eid%20dance%20viral" target="_blank">🎵 TikTok</a>
+                  <a href="https://www.instagram.com/explore/tags/ripamitabhbachchan/" target="_blank" class="meme-link">IG搜索</a>
+                  <a href="https://www.pakistantoday.com.pk/2026/06/01/rip-amitabh-bachchan-the-internets-most-unhinged-trend-this-week" target="_blank" class="meme-link">Pakistan Today</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>挑战:</strong> &ldquo;Eid正确庆祝方式&rdquo;挑战赛模板</li>
-                    <li><strong>PK:</strong> Xena上跨文化舞蹈PK直播间</li>
-                    <li><strong>家庭:</strong> 和家人在Xena上展示节日舞蹈</li>
+                    <li><strong>反转剧情：</strong>利用bait-and-switch格式&mdash;&mdash;&ldquo;Breaking: 我要卸载Xena了...因为太好玩了忍不住一直用!&rdquo;</li>
                   </ul>
                 </div>
               </div>
@@ -1700,179 +1089,92 @@
           </div>
         </div>
         <div class="sub-section">
-          <h4>📅 文化日历</h4>
+          <h4>&#128197; 文化日历</h4>
           <ul class="calendar-list">
-            <li class="calendar-item"><span class="cal-date">6/7</span><div class="cal-info"><strong>GB大选</strong> &mdash; 吉尔吉特-巴尔蒂斯坦24席普选</div></li>
-            <li class="calendar-item"><span class="cal-date">6/11-13</span><div class="cal-info"><strong>Shandur Polo Festival</strong> &mdash; 世界最高马球场</div></li>
-            <li class="calendar-item"><span class="cal-date">6/11</span><div class="cal-info"><strong>FIFA World Cup开幕</strong></div></li>
-            <li class="calendar-item"><span class="cal-date">6/24-25</span><div class="cal-info"><strong>Ashura</strong> &mdash; 公共假日，安全管控期</div></li>
+            <li class="calendar-item"><span class="cal-date">6/16</span><div class="cal-info"><strong>伊斯兰新年 1448H</strong> &mdash; 公共假期</div></li>
+            <li class="calendar-item"><span class="cal-date">6/25</span><div class="cal-info"><strong>Ashura日</strong> &mdash; 重要宗教纪念日</div></li>
           </ul>
-        </div>
-        <div class="sub-section">
-          <div class="warning-box">
-            <h4>⚠️ 避坑提醒</h4>
-            <ul>
-              <li>Hajj内容需极度谨慎，Wasim Akram视频部分人认为不够严肃</li>
-              <li>PTI/军方政治极度敏感，绝对避免任何政治立场</li>
-              <li>Abraham Accords/以色列话题零容忍</li>
-              <li>Ashura临近，教派紧张局势升高，GB地区尤甚</li>
-            </ul>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- === India === -->
+    <!-- INDIA -->
     <div class="country-card sa">
-      <div class="country-title" onclick="this.parentElement.classList.toggle('collapsed')">
-        <span class="flag">🇮🇳</span>
-        <h3>印度 India</h3>
-        <span class="toggle">▼</span>
-      </div>
+      <div class="country-title"><span class="flag">&#127470;&#127475;</span><h3>India</h3><span class="toggle">&#9660;</span></div>
       <div class="country-body">
         <div class="sub-section">
-          <h4>🔥 本周热点 Top 5</h4>
+          <h4>&#128293; Top 5 热门话题</h4>
           <ul class="trend-list">
-            <li class="trend-item">
-              <span class="trend-rank hot">1</span>
-              <div class="trend-content">
-                <div class="trend-name">Cockroach Janta Party (CJP)</div>
-                <div class="trend-desc">CJI称年轻人为&ldquo;蟑螂&rdquo;引发Gen Z反击，Instagram粉丝5天破2000万超BJP(8.7M)，350K+注册成员，X账号被封后秒转生。</div>
-                <div class="trend-meta"><span class="tag platform">Instagram</span><span class="tag platform">X</span><span class="tag platform">YouTube</span><span class="tag heat">🔥🔥🔥 20M+ IG粉丝</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank hot">2</span>
-              <div class="trend-content">
-                <div class="trend-name">Modi-Meloni &ldquo;Melody&rdquo; Meme</div>
-                <div class="trend-desc">莫迪访罗马赠Melody太妃糖给梅洛尼，视频190M+播放成为梅洛尼IG最火视频；Parle股票误涨5%。</div>
-                <div class="trend-meta"><span class="tag platform">Instagram</span><span class="tag platform">X</span><span class="tag platform">YouTube</span><span class="tag heat">🔥🔥🔥 190M+播放</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank hot">3</span>
-              <div class="trend-content">
-                <div class="trend-name">RCB IPL 2026 卫冕冠军</div>
-                <div class="trend-desc">Virat Kohli 42球75*带队5 wickets胜Gujarat Titans，最后一球六分绝杀！&ldquo;One felt nice, we did it twice&rdquo;。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Instagram</span><span class="tag platform">YouTube</span><span class="tag heat">🔥🔥🔥 #rcbvsgt 15h热搜</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">4</span>
-              <div class="trend-content">
-                <div class="trend-name">CBSE OSM答卷乌龙 + NEET泄题</div>
-                <div class="trend-desc">学生Vedant揭露CBSE给错物理答卷(3.2M+浏览)被网暴；NEET-UG 5/3因泄题取消，6/21重考。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">Instagram</span><span class="tag heat">🔥🔥🔥 3.2M+浏览</span><span class="tag peak">🔝 峰值</span></div>
-              </div>
-            </li>
-            <li class="trend-item">
-              <span class="trend-rank">5</span>
-              <div class="trend-content">
-                <div class="trend-name">48&deg;C+极端热浪</div>
-                <div class="trend-desc">拉贾斯坦48.2&deg;C成全球最热，安得拉邦48.1&deg;C，至少16人因热射病死亡。季风即将到来。</div>
-                <div class="trend-meta"><span class="tag platform">X</span><span class="tag platform">YouTube</span><span class="tag heat">🔥🔥🔥 全球媒体报道</span><span class="tag fading">📉 渐退</span></div>
-              </div>
-            </li>
+            <li class="trend-item"><span class="trend-rank hot">1</span><div class="trend-content"><div class="trend-name">#IPLFinal / #rcbvsgt</div><div class="trend-desc">RCB击败GT实现IPL两连冠，Kohli绝杀名场面</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">290分+238分</span><span class="tag peak">&#128308; 峰值</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank hot">2</span><div class="trend-content"><div class="trend-name">#UchaLambaKadForever</div><div class="trend-desc">印度政治/社会议题讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">609分</span><span class="tag peak">&#128308; 峰值 15h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">3</span><div class="trend-content"><div class="trend-name">#IndiaNeedsEducatedPM</div><div class="trend-desc">呼吁受过教育的总理&#8212;政治讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">553分</span><span class="tag peak">&#128308; 峰值 14h</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">4</span><div class="trend-content"><div class="trend-name">#aryabhata</div><div class="trend-desc">印度古代数学家Aryabhata相关教育/科学讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">288分</span><span class="tag new">NEW</span></div></div></li>
+            <li class="trend-item"><span class="trend-rank">5</span><div class="trend-content"><div class="trend-name">#UPGreenInfraBoost</div><div class="trend-desc">北方邦绿色基础设施建设讨论</div><div class="trend-meta"><span class="tag platform">X/Twitter</span><span class="tag heat">290分</span><span class="tag new">NEW</span></div></div></li>
           </ul>
         </div>
         <div class="sub-section">
-          <h4>🎭 热梗 / 病毒内容</h4>
+          <h4>&#127775; 热梗 / 病毒内容</h4>
           <div class="meme-grid">
             <div class="meme-card">
-              <div class="meme-thumb">🍬</div>
               <div class="meme-card-content">
-                <div class="meme-name">CarryMinati &times; MrBeast &ldquo;Melody&rdquo; 复刻</div>
-                <div class="meme-desc">印度第一YouTuber与全球第一YouTuber联手复刻Modi-Meloni太妃糖名场面。MrBeast确认CarryMinati将出现在Beast Games S2。</div>
+                <div class="meme-name">Cockroach Janta Party (蟑螂人民党)</div>
+                <div class="meme-desc">30岁的Abhijeet Dipke创立讽刺运动，以蟑螂为符号代表&ldquo;懒人、失业者和永远正确的人&rdquo;。Instagram 2300万+粉丝，引发印度最大规模线上Z世代政治表达</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 数百万浏览(数小时)</span>
-                  <span class="meme-stat trending">🔥 多家媒体报道</span>
+                  <span class="meme-stat followers">&#128101; 23M+ IG粉丝</span>
+                  <span class="meme-stat views">&#128065; 全国级传播</span>
+                  <span class="meme-stat trending">&#128293; 现象级</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.dnaindia.com/viral/report-viral-video-carryminati-recreates-pm-narendra-modi-giorgia-meloni-s-melody-moment-with-mrbeast-internet-can-t-handle-it-no-way-it-s-ai-3212053" target="_blank">📰 DNA India</a>
-                  <a class="meme-link" href="https://kiddaan.com/carryminati-mrbeast-melodi-meme/" target="_blank">📰 Kiddaan</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=CarryMinati%20MrBeast%20Melody" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://www.youtube.com/results?search_query=CarryMinati+MrBeast+Melody" target="_blank">▶️ YouTube</a>
+                  <a href="https://www.instagram.com/cockroachjantaparty/" target="_blank" class="meme-link">Instagram</a>
+                  <a href="https://www.tribuneindia.com/news/spectrum/cockrosh-why-a-parody-movement-is-resonating-with-youth" target="_blank" class="meme-link">Tribune India</a>
+                  <a href="https://www.marketscreener.com/news/india-s-gen-z-cockroach-party-channels-youth-anger-ce7f5dd8d180f624" target="_blank" class="meme-link">MarketScreener</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>送礼:</strong> 在Xena上和好友复刻&ldquo;Melody&rdquo;送礼</li>
-                    <li><strong>挑战:</strong> &ldquo;好友礼物大挑战&rdquo;视频聊天互动</li>
-                    <li><strong>跨国:</strong> Xena跨国友谊日送糖互动活动</li>
+                    <li><strong>&#9888; 高敏感：</strong>政治讽刺运动，品牌避免直接关联。但其UGC传播机制（梗模板+参与门槛低）值得学习</li>
+                    <li><strong>Z世代表达：</strong>可借鉴&ldquo;你是哪种[X]?&rdquo;的趣味人格测试格式做Xena社交话题</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">👆</div>
               <div class="meme-card-content">
-                <div class="meme-name">&ldquo;Clock It&rdquo; 手势梗</div>
-                <div class="meme-desc">Gen Z最新流行手势&mdash;&mdash;拇指食指轻敲意思&ldquo;看穿了&rdquo;。Delhi Police巧妙借用做网络安全宣传被赞&ldquo;最懂互联网的警察&rdquo;。</div>
+                <div class="meme-name">Virat Kohli &amp; Anushka Sharma IPL庆祝</div>
+                <div class="meme-desc">RCB卫冕IPL冠军后，Kohli的T恤写着&ldquo;One felt nice, we did twice&rdquo;，与Anushka赛后跳舞视频全网刷屏</div>
                 <div class="meme-stats">
-                  <span class="meme-stat trending">🔥 多家媒体专题</span>
-                  <span class="meme-stat views">👁️ TikTok/IG全面爆发</span>
+                  <span class="meme-stat views">&#128065; 全网刷屏</span>
+                  <span class="meme-stat trending">&#128293; 板球+娱乐双热</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.indiatvnews.com/trending/news/clock-it-delhi-police-turns-viral-meme-trend-into-internet-safety-lesson-2026-05-21-1041930" target="_blank">📰 India TV</a>
-                  <a class="meme-link" href="https://www.cosmopolitan.in/life/features/story/what-is-clock-itthe-shady-little-gen-z-gesture-everyones-obsessed-with-1397663-2026-05-26" target="_blank">📰 Cosmo India</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Clock%20It%20trend%20India" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://x.com/search?q=Delhi%20Police%20ClockIt" target="_blank">🐦 X</a>
+                  <a href="https://www.youtube.com/results?search_query=kohli+anushka+dance+ipl+final+2026" target="_blank" class="meme-link">YouTube搜索</a>
+                  <a href="https://www.bollywoodlife.com/viral-stories/virat-kohli-anushka-sharmas-viral-dance-video-after-rcbs-ipl-win-takes-internet-by-storm-melts-fans-hearts-3346743/" target="_blank" class="meme-link">BollywoodLife</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>滤镜:</strong> &ldquo;Clock It&rdquo;手势滤镜挑战赛</li>
-                    <li><strong>互动:</strong> 在Xena直播中用Clock It点评穿搭</li>
-                    <li><strong>游戏:</strong> Xena版&ldquo;我看穿了你&rdquo;互动小游戏</li>
+                    <li><strong>冠军庆祝：</strong>&ldquo;One felt nice, we did it TWICE! 和Xena好友一起庆祝!&rdquo;制作板球+社交庆祝视频</li>
+                    <li><strong>情侣互动：</strong>借Kohli-Anushka甜蜜时刻做&ldquo;Xena上你最想tag的人&rdquo;互动话题</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="meme-card">
-              <div class="meme-thumb">🎵</div>
               <div class="meme-card-content">
-                <div class="meme-name">&ldquo;Ghis Ghis Ghis&rdquo; 婚礼炸场神曲</div>
-                <div class="meme-desc">Akshay Kumar &times; Akshara Singh合作曲(《Welcome to the Jungle》插曲)，Bhojpuri风格舞蹈，7天YouTube破2200万。</div>
+                <div class="meme-name">RIP Amitabh Bachchan 假死bait-and-switch梗</div>
+                <div class="meme-desc">IG刷屏的brainrot humor：标题写&ldquo;Amitabh Bachchan found dead&rdquo;→ 实际是&ldquo;家里发现一只死蟑螂&rdquo;。引发关于网络幽默边界的讨论</div>
                 <div class="meme-stats">
-                  <span class="meme-stat views">👁️ 22.1M YouTube</span>
-                  <span class="meme-stat likes">❤️ 224.7K 赞</span>
+                  <span class="meme-stat views">&#128065; 百万级播放</span>
+                  <span class="meme-stat trending">&#128293; IG刷屏</span>
                 </div>
                 <div class="meme-links">
-                  <a class="meme-link" href="https://www.bollywoodhungama.com/news/bollywood/akshay-kumars-ghis-ghis-ghis-is-not-here-to-win-critics-its-here-to-hijack-weddings-reels-and-meme-pages/" target="_blank">📰 Bollywood Hungama</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Ghis%20Ghis%20Ghis%20dance" target="_blank">🎵 TikTok</a>
-                  <a class="meme-link" href="https://www.youtube.com/results?search_query=Ghis+Ghis+Ghis+Akshay+Kumar" target="_blank">▶️ YouTube</a>
+                  <a href="https://www.instagram.com/explore/tags/ripamitabhbachchan/" target="_blank" class="meme-link">IG搜索</a>
+                  <a href="https://www.pakistantoday.com.pk/2026/06/01/rip-amitabh-bachchan-the-internets-most-unhinged-trend-this-week" target="_blank" class="meme-link">Pakistan Today</a>
                 </div>
                 <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
+                  <div class="creative-suggest-label">&#128161; Xena素材灵感</div>
                   <ul class="creative-suggest-list">
-                    <li><strong>舞蹈:</strong> Ghis Ghis Ghis舞蹈挑战赛直播PK</li>
-                    <li><strong>派对:</strong> Xena婚礼季主题虚拟派对房间</li>
-                    <li><strong>对决:</strong> &ldquo;宝莱坞vs本土舞蹈&rdquo;对决直播</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="meme-card">
-              <div class="meme-thumb">🪳</div>
-              <div class="meme-card-content">
-                <div class="meme-name">CJP &ldquo;蟑螂不死&rdquo; 运动文化现象</div>
-                <div class="meme-desc">已演变为完整文化运动：parody竞选海报、Corporate Janta Party讽刺职场、X被封后秒以&ldquo;Cockroach is Back&rdquo;回归。Wikipedia已有词条。</div>
-                <div class="meme-stats">
-                  <span class="meme-stat followers">👥 20M+ IG粉丝</span>
-                  <span class="meme-stat trending">🔥 350K+注册</span>
-                </div>
-                <div class="meme-links">
-                  <a class="meme-link" href="https://en.wikipedia.org/wiki/Cockroach_Janta_Party" target="_blank">📚 Wikipedia</a>
-                  <a class="meme-link" href="https://www.thedailyjagran.com/india/from-cockroach-janta-party-to-corporate-janta-party-how-cji-remarks-triggered-viral-gen-z-meme-movement-10313265" target="_blank">📰 Daily Jagran</a>
-                  <a class="meme-link" href="https://x.com/search?q=Cockroach%20Janta%20Party" target="_blank">🐦 X</a>
-                  <a class="meme-link" href="https://www.tiktok.com/search?q=Cockroach%20Janta%20Party" target="_blank">🎵 TikTok</a>
-                </div>
-                <div class="creative-suggest">
-                  <div class="creative-suggest-label">🎬 素材灵感 &middot; Xena</div>
-                  <ul class="creative-suggest-list">
-                    <li><strong>变装:</strong> &ldquo;蟑螂不死&rdquo;变装挑战直播</li>
-                    <li><strong>创意:</strong> Xena上创建你的&ldquo;XX Janta Party&rdquo;</li>
-                    <li><strong>吐槽:</strong> Gen Z吐槽大会主题直播间</li>
+                    <li><strong>反转叙事：</strong>用bait-and-switch格式做品牌内容&mdash;&mdash;&ldquo;BREAKING: 我被Xena毁了...的睡眠时间(太好玩了)&rdquo;</li>
                   </ul>
                 </div>
               </div>
@@ -1880,33 +1182,20 @@
           </div>
         </div>
         <div class="sub-section">
-          <h4>📅 文化日历</h4>
+          <h4>&#128197; 文化日历</h4>
           <ul class="calendar-list">
-            <li class="calendar-item"><span class="cal-date">6/5</span><div class="cal-info"><strong>World Environment Day</strong> + Varun Dhawan新片上映</div></li>
-            <li class="calendar-item"><span class="cal-date">6/11</span><div class="cal-info"><strong>FIFA World Cup 2026开幕</strong></div></li>
-            <li class="calendar-item"><span class="cal-date">6/21</span><div class="cal-info"><strong>NEET-UG重考</strong> + Yoga Day + Father&rsquo;s Day</div></li>
-            <li class="calendar-item"><span class="cal-date">6/26</span><div class="cal-info"><strong>Welcome to the Jungle</strong> &mdash; Akshay Kumar新片上映</div></li>
+            <li class="calendar-item"><span class="cal-date">6/15</span><div class="cal-info"><strong>Rath Yatra</strong> &mdash; 印度教战车节(Puri)</div></li>
+            <li class="calendar-item"><span class="cal-date">6/21</span><div class="cal-info"><strong>International Yoga Day</strong> &mdash; 国际瑜伽日(印度发起)</div></li>
           </ul>
         </div>
         <div class="sub-section">
-          <h4>💡 广告创意启发</h4>
-          <table class="creative-table">
-            <thead><tr><th>热点</th><th>素材方向</th><th>文案角度</th><th>渠道</th><th>风险</th></tr></thead>
-            <tbody>
-              <tr><td>Melody梗(190M)</td><td>好友送礼社交场景</td><td>&ldquo;Your friends deserve a Melody moment on Xena 🍬&rdquo;</td><td>IG/YT</td><td class="risk-low">低</td></tr>
-              <tr><td>IPL RCB卫冕</td><td>球迷狂欢社交</td><td>&ldquo;Match ka maza Xena friends ke saath double! 🏏&rdquo;</td><td>FB/IG</td><td class="risk-low">低</td></tr>
-              <tr><td>Ghis Ghis Ghis(22M)</td><td>舞蹈挑战赛</td><td>&ldquo;Xena pe dance off! 💃 Who does it better?&rdquo;</td><td>TikTok</td><td class="risk-low">低</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="sub-section">
+          <h4>&#9888; 风险提示</h4>
           <div class="warning-box">
-            <h4>⚠️ 避坑提醒</h4>
+            <h4>&#9888; 注意事项</h4>
             <ul>
-              <li>CJP涉及CJI(首席大法官)言论和政治讽刺，不可直接引用</li>
-              <li>NEET/CBSE涉及数百万学生前途，不适合娱乐化</li>
-              <li>热浪已致至少16人死亡，不可轻浮对待</li>
-              <li>Modi-Meloni梗虽火但涉及总理，避免不敬内容</li>
+              <li>TikTok在印度被禁，该市场内容主要通过Instagram Reels、YouTube Shorts、X传播</li>
+              <li>Cockroach Janta Party虽然火爆但属政治讽刺运动，品牌需保持距离</li>
+              <li>AI生成的Kohli-Anushka虚假视频在流传，素材引用需核实真伪</li>
             </ul>
           </div>
         </div>
@@ -1915,144 +1204,136 @@
 
   </div>
 </div>
-
 
 <!-- ==================== CROSS-REGION ==================== -->
 <div class="cross-region" id="cross-region">
-  <h2>🔗 跨区域趋势洞察</h2>
+  <h2>&#127760; 跨区域趋势洞察</h2>
   <ul>
-    <li>⚽ <strong>FIFA World Cup 2026 倒计时 (6/11开幕)</strong> &mdash; 全部10个市场共同关注：🇸🇦沙特G组(西班牙/乌拉圭/佛得角)、🇪🇬埃及G组(比利时)、🇮🇩印尼Matchday(阿曼/莫桑比克)。最安全、最广泛的跨区域热点，Xena可策划&ldquo;全球球迷视频通话看球&rdquo;活动。</li>
-    <li>🎵 <strong>AI生成音乐爆款</strong> &mdash; 🇮🇩印尼MBG(55.6M)+Veronika Ko双曲霸屏，AI+音乐+搞笑=东南亚病毒公式。Xena可推出&ldquo;AI歌曲创作器&rdquo;直播功能。</li>
-    <li>🪳 <strong>Cockroach运动跨境传播</strong> &mdash; 🇮🇳印度CJP(20M+ IG)&rarr;🇵🇰巴基斯坦CAP本土化，Gen Z政治讽刺的共鸣跨越国界。品牌可借年轻化tone但绝不涉政治。</li>
-    <li>🤖 <strong>AI内容趋势全球化</strong> &mdash; 🇪🇬Macron AI恶搞 + 🇦🇪Bu Sunaida机器人 + 🇮🇩UFO AI骗局 + 🇮🇶Lego meme war。AI生成内容已成为各市场主流传播形式。</li>
-    <li>🌙 <strong>Eid后续+伊斯兰新年</strong> &mdash; Eid Al-Adha刚结束(🇸🇦🇪🇬🇹🇷🇦🇪🇮🇶🇵🇰🇮🇩🇲🇾)，6月16&ndash;18日伊斯兰新年。&ldquo;节日问候视频通话&rdquo;主题推广窗口。</li>
-    <li>❤️ <strong>暖心正能量内容高转化</strong> &mdash; 🇲🇾摩托车手帮老人(1.8M) + 🇵🇭Ivana Alawi善举 + 🇲🇾猴子救援Kula(1.2M)。&ldquo;善良+社交&rdquo;是安全且高效的创意方向，与Xena定位完美契合。</li>
+    <li><strong>&#128293; #TREASURE_NEW_WAV</strong> &mdash; 韩国男团TREASURE新专辑同时在印尼(#1)、菲律宾(#1)、马来(#3)霸榜，K-pop在东南亚的统治力持续。<strong>Xena可结合K-pop粉丝社交做东南亚联动活动</strong></li>
+    <li><strong>&#128171; Cockroach政治梗</strong> &mdash; 从印度(23M粉丝)传播到巴基斯坦的跨境梗运动，展示南亚Z世代共同的经济焦虑和幽默表达方式。品牌可学习其低门槛UGC传播机制</li>
+    <li><strong>&#9917; IPL Finals</strong> &mdash; RCB卫冕IPL冠军在印度(#1)和UAE(#1)同时霸榜，体育赛事驱动跨国社交热度。Kohli T恤标语&ldquo;One felt nice, we did twice&rdquo;成为梗模板</li>
+    <li><strong>&#127917; &ldquo;At the Request of Pakistan&rdquo;</strong> &mdash; 地缘政治事件产生的全球级梗模板，从巴基斯坦传播到全球各平台。展示梗的&ldquo;去政治化&rdquo;二次传播能力</li>
+    <li><strong>&#127769; Eid al-Adha 节后效应</strong> &mdash; 宰牲节(5/27-30)刚过，所有穆斯林市场(ID/MY/SA/EG/TR/AE/IQ/PK)仍有节后家庭团聚内容余温。下一个重要节日：伊斯兰新年(6/16)</li>
+    <li><strong>&#127909; AI生成内容趋势</strong> &mdash; MBG(印尼AI歌曲)、伊朗乐高梗、假死bait-and-switch、AI换脸视频等&mdash;&mdash;AI内容在各市场加速渗透，品牌需关注真伪辨别和合规风险</li>
   </ul>
 </div>
 
-
 <!-- ==================== CREATIVE BRIEFS ==================== -->
-<div class="brief-section" id="briefs">
-  <h2>✨ 创意 Brief 卡片 &mdash; 本周可执行方案</h2>
+<div class="brief-section" id="brief-section">
+  <h2>&#128161; Creative Brief Cards</h2>
   <div class="brief-grid">
 
-    <!-- Card 1 -->
     <div class="brief-card">
       <div class="brief-card-header priority-3">
-        <h3>⚽ 世界杯社交看球 &mdash; 跨区域爆点</h3>
-        <div class="brief-region">🌍 全部10个市场</div>
-        <span class="priority-badge">⭐⭐⭐</span>
+        <h3>&#127925; MBG AI神曲 &times; Xena评论变歌词</h3>
+        <div class="brief-region">&#127470;&#127465; Indonesia</div>
+        <span class="priority-badge">&#11088;&#11088;&#11088;</span>
       </div>
       <div class="brief-body">
-        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">6/11世界杯开幕倒计时+球迷社交场景。好友在Xena上一起欢呼庆祝进球，连接不同国家球迷</div></div>
-        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">高能量快剪辑、球场灯光、各国球衣、多屏分割通话画面</div></div>
-        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">EN: &ldquo;World Cup 2026 is HERE! Watch with friends worldwide on Xena ⚽🌍&rdquo; / AR: &ldquo;كأس العالم أحلى مع أصدقاء على زينا&rdquo; / ID: &ldquo;Nonton bareng teman baru di Xena!&rdquo;</div></div>
-        <div class="brief-field"><div class="brief-field-label">投放窗口</div><div class="brief-field-value">6/5 &ndash; 6/30 (开幕前预热+赛程期间)</div></div>
-      </div>
-      <div class="brief-footer">
-        <div class="channels"><span class="channel-tag">TikTok</span><span class="channel-tag">IG</span><span class="channel-tag">FB</span><span class="channel-tag">YouTube</span></div>
-        <span class="risk low">低风险</span>
-        <button class="copy-btn" onclick="copyBrief(this)">📋 复制Brief</button>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="brief-card">
-      <div class="brief-card-header priority-3">
-        <h3>🎵 AI热歌Xena版 &mdash; 借势MBG 55.6M播放</h3>
-        <div class="brief-region">🇮🇩 Indonesia</div>
-        <span class="priority-badge">⭐⭐⭐</span>
-      </div>
-      <div class="brief-body">
-        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">借势MBG+Veronika Ko双曲热度，制作&ldquo;Xena用户评论变歌曲&rdquo;短视频+&ldquo;Bluetooth connected&rdquo;梗</div></div>
-        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">TikTok UGC风，手机自拍+AI音乐+reaction镜头，高能量快节奏</div></div>
-        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">&ldquo;Komentar kamu bisa jadi lagu viral! 🎵 Coba ngobrol di Xena dulu~&rdquo; / &ldquo;Bluetooth connected &rarr; Xena connected 📶&rdquo;</div></div>
-        <div class="brief-field"><div class="brief-field-label">投放窗口</div><div class="brief-field-value">立即 (MBG峰值 5/26 &ndash; 6/8)</div></div>
+        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">借势MBG 48.3M播放热度，制作&ldquo;Xena用户评论变歌曲&rdquo;UGC挑战+finger heart互动贴纸</div></div>
+        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">TikTok UGC风，手机自拍+AI音乐+reaction镜头，15秒高能量快节奏</div></div>
+        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">&ldquo;Komentar kamu bisa jadi lagu viral! &#127925; Coba ngobrol di Xena dulu~&rdquo;</div></div>
+        <div class="brief-field"><div class="brief-field-label">投放窗口</div><div class="brief-field-value">立即 (MBG峰值仍在，6/2 &ndash; 6/10)</div></div>
       </div>
       <div class="brief-footer">
         <div class="channels"><span class="channel-tag">TikTok</span><span class="channel-tag">IG Reels</span></div>
         <span class="risk low">低风险</span>
-        <button class="copy-btn" onclick="copyBrief(this)">📋 复制Brief</button>
+        <button class="copy-btn" onclick="copyBrief(this)">&#128203; 复制Brief</button>
       </div>
     </div>
 
-    <!-- Card 3 -->
     <div class="brief-card">
       <div class="brief-card-header priority-3">
-        <h3>🍬 Melody借势 &mdash; 190M播放跨国送礼梗</h3>
-        <div class="brief-region">🇮🇳 India / 🇵🇰 Pakistan</div>
-        <span class="priority-badge">⭐⭐⭐</span>
+        <h3>&#127837; Sharmaine起名梗 &times; Xena昵称互动</h3>
+        <div class="brief-region">&#127477;&#127469; Philippines</div>
+        <span class="priority-badge">&#11088;&#11088;&#11088;</span>
       </div>
       <div class="brief-body">
-        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">复刻Modi-Meloni/CarryMinati-MrBeast的Melody送礼名场面&mdash;&mdash;&ldquo;在Xena上给好友送一颗Melody&rdquo;，跨国友谊+惊喜元素</div></div>
-        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">分屏视频通话画面，温馨+搞笑，真实感reaction</div></div>
-        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">&ldquo;Your friends deserve a Melody moment 🍬 Send it on Xena!&rdquo; / Hinglish: &ldquo;Dosti ka asli taste Xena pe! 😋&rdquo;</div></div>
-        <div class="brief-field"><div class="brief-field-label">投放窗口</div><div class="brief-field-value">立即 &ndash; 6/10 (梗仍在峰值)</div></div>
+        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">借势Sharmaine橘子改名梗(500K+反应)，发起&ldquo;给你的Xena好友起个新名字&rdquo;互动挑战</div></div>
+        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">BAET式搞笑配音+物品拟人化，菲式幽默+tagalog口语</div></div>
+        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">&ldquo;Your Xena friend deserves a better name than &lsquo;User123&rsquo;! Give them a Sharmaine moment &#127818;&rdquo;</div></div>
+        <div class="brief-field"><div class="brief-field-label">投放窗口</div><div class="brief-field-value">6/2 &ndash; 6/12 (梗在峰值)</div></div>
       </div>
       <div class="brief-footer">
-        <div class="channels"><span class="channel-tag">IG Reels</span><span class="channel-tag">YouTube Shorts</span><span class="channel-tag">FB</span></div>
+        <div class="channels"><span class="channel-tag">TikTok</span><span class="channel-tag">IG Reels</span><span class="channel-tag">FB</span></div>
         <span class="risk low">低风险</span>
-        <button class="copy-btn" onclick="copyBrief(this)">📋 复制Brief</button>
+        <button class="copy-btn" onclick="copyBrief(this)">&#128203; 复制Brief</button>
       </div>
     </div>
 
-    <!-- Card 4 -->
     <div class="brief-card">
-      <div class="brief-card-header priority-2">
-        <h3>🐔 KFC Kentaaky式悬念营销</h3>
-        <div class="brief-region">🇸🇦🇦🇪 Saudi/Gulf</div>
-        <span class="priority-badge">⭐⭐</span>
+      <div class="brief-card-header priority-3">
+        <h3>&#127917; &ldquo;At the Request of&rdquo; 万能借口模板</h3>
+        <div class="brief-region">&#127477;&#127472; Pakistan / Global</div>
+        <span class="priority-badge">&#11088;&#11088;&#11088;</span>
       </div>
       <div class="brief-body">
-        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">借鉴KFC成功案例，设计&ldquo;谁是你在Xena上的mystery friend?&rdquo;神秘人物悬念系列短视频</div></div>
-        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">街拍风、悬念/揭晓结构、中东本地化场景(商场、咖啡馆)</div></div>
-        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">AR: &ldquo;مين هذا الشخص الغامض؟ 🐔 اكتشف على Xena&rdquo; / EN: &ldquo;Who&rsquo;s behind the mask? Find out on Xena!&rdquo;</div></div>
-        <div class="brief-field"><div class="brief-field-label">投放窗口</div><div class="brief-field-value">6月 (Eid后新campaign)</div></div>
+        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">利用全球爆火的&ldquo;At the request of Pakistan&rdquo;梗模板，制作Xena版趣味借口视频系列</div></div>
+        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">推文截图+reaction视频，轻松幽默，避免政治面向</div></div>
+        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">&ldquo;At the request of my Xena friends, I&rsquo;m staying up late to chat! &#128514;&rdquo; / &ldquo;At the request of Xena, I skipped my homework &#128218;&rdquo;</div></div>
+        <div class="brief-field"><div class="brief-field-label">投放窗口</div><div class="brief-field-value">立即 (梗仍在上升期)</div></div>
+      </div>
+      <div class="brief-footer">
+        <div class="channels"><span class="channel-tag">X/Twitter</span><span class="channel-tag">IG</span><span class="channel-tag">TikTok</span></div>
+        <span class="risk mid">中风险(需去政治化)</span>
+        <button class="copy-btn" onclick="copyBrief(this)">&#128203; 复制Brief</button>
+      </div>
+    </div>
+
+    <div class="brief-card">
+      <div class="brief-card-header priority-2">
+        <h3>&#128014; KFC Kentaaky式悬念营销</h3>
+        <div class="brief-region">&#127480;&#127462;&#127462;&#127466; Saudi/Gulf</div>
+        <span class="priority-badge">&#11088;&#11088;</span>
+      </div>
+      <div class="brief-body">
+        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">借鉴KFC &ldquo;Those Kentaaky Guys&rdquo;全国级病毒营销成功案例，设计Xena版&ldquo;Mystery Friend&rdquo;悬念揭晓系列</div></div>
+        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">街拍风、悬念/揭晓结构、中东本地化场景(商场、咖啡馆、沙漠)</div></div>
+        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">AR: &ldquo;&#1605;&#1610;&#1606; &#1607;&#1584;&#1575; &#1575;&#1604;&#1588;&#1582;&#1589; &#1575;&#1604;&#1594;&#1575;&#1605;&#1590;&#1567; &#128020; &#1575;&#1603;&#1578;&#1588;&#1601; &#1593;&#1604;&#1609; Xena&rdquo;</div></div>
+        <div class="brief-field"><div class="brief-field-label">投放窗口</div><div class="brief-field-value">6月 (Eid后新campaign黄金期)</div></div>
       </div>
       <div class="brief-footer">
         <div class="channels"><span class="channel-tag">TikTok</span><span class="channel-tag">Snapchat</span><span class="channel-tag">IG</span></div>
         <span class="risk low">低风险</span>
-        <button class="copy-btn" onclick="copyBrief(this)">📋 复制Brief</button>
+        <button class="copy-btn" onclick="copyBrief(this)">&#128203; 复制Brief</button>
       </div>
     </div>
 
-    <!-- Card 5 -->
     <div class="brief-card">
       <div class="brief-card-header priority-2">
-        <h3>🏏 IPL冠军热血社交</h3>
-        <div class="brief-region">🇮🇳 India</div>
-        <span class="priority-badge">⭐⭐</span>
+        <h3>&#127942; IPL冠军热血社交</h3>
+        <div class="brief-region">&#127470;&#127475; India / &#127462;&#127466; UAE</div>
+        <span class="priority-badge">&#11088;&#11088;</span>
       </div>
       <div class="brief-body">
-        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">RCB卫冕冠军+Kohli绝杀名场面，好友在Xena上欢呼庆祝。&ldquo;One felt nice, we did it twice&rdquo;融入文案</div></div>
-        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">运动风、高对比、快剪辑。球场灯光、人群欢呼、Kohli六分绝杀</div></div>
-        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">&ldquo;One felt nice, we did it TWICE! 🏏🏆 Celebrate with friends on Xena!&rdquo; / Hinglish: &ldquo;Match ka maza Xena pe double!&rdquo;</div></div>
+        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">RCB卫冕+Kohli T恤标语&ldquo;One felt nice, we did it twice&rdquo;融入Xena社交庆祝场景</div></div>
+        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">运动风、高对比、快剪辑。球场灯光、人群欢呼、celebration reaction</div></div>
+        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">&ldquo;One felt nice, we did it TWICE! &#127943;&#127942; Celebrate with friends on Xena!&rdquo; / Hinglish: &ldquo;Match ka maza Xena pe double!&rdquo;</div></div>
         <div class="brief-field"><div class="brief-field-label">投放窗口</div><div class="brief-field-value">立即 &ndash; 6/5 (冠军热度窗口)</div></div>
       </div>
       <div class="brief-footer">
-        <div class="channels"><span class="channel-tag">IG</span><span class="channel-tag">YouTube</span><span class="channel-tag">FB</span></div>
+        <div class="channels"><span class="channel-tag">IG Reels</span><span class="channel-tag">YouTube Shorts</span></div>
         <span class="risk low">低风险</span>
-        <button class="copy-btn" onclick="copyBrief(this)">📋 复制Brief</button>
+        <button class="copy-btn" onclick="copyBrief(this)">&#128203; 复制Brief</button>
       </div>
     </div>
 
-    <!-- Card 6 -->
     <div class="brief-card">
       <div class="brief-card-header priority-2">
-        <h3>🏛️ 法老世界杯 &times; 文化自豪</h3>
-        <div class="brief-region">🇪🇬 Egypt</div>
-        <span class="priority-badge">⭐⭐</span>
+        <h3>&#127757; Alper Temel &ldquo;Culture is People&rdquo;</h3>
+        <div class="brief-region">&#127481;&#127479; Turkey</div>
+        <span class="priority-badge">&#11088;&#11088;</span>
       </div>
       <div class="brief-body">
-        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">借势法老装阵容发布的文化自豪情绪&mdash;&mdash;&ldquo;用你的文化风格展示你的Xena出战阵容&rdquo;，传统服饰社交+世界杯话题</div></div>
-        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">暖色调、史诗感滤镜+UGC、博物馆/地标场景</div></div>
-        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">AR: &ldquo;الفراعنة جاهزين! شجعهم مع أصدقاء على Xena 🏛️⚽&rdquo; / EN: &ldquo;Pharaohs are coming! Cheer with friends on Xena&rdquo;</div></div>
-        <div class="brief-field"><div class="brief-field-label">投放窗口</div><div class="brief-field-value">6/1 &ndash; 6/15 (首战比利时前)</div></div>
+        <div class="brief-field"><div class="brief-field-label">素材方向</div><div class="brief-field-value">借势伊斯坦布尔最帅玉米小贩(934K粉)的&ldquo;I visited [city] for the culture&rdquo;反转梗，改为&ldquo;I joined Xena for the culture&rdquo;</div></div>
+        <div class="brief-field"><div class="brief-field-label">参考风格</div><div class="brief-field-value">旅行Vlog风+反转揭晓，城市街拍+Xena App画面切换</div></div>
+        <div class="brief-field"><div class="brief-field-label">文案建议</div><div class="brief-field-value">TR: &ldquo;K&#252;lt&#252;r i&#231;in geldim... Xena&rsquo;daki arkada&#351;lar &#128293;&rdquo; / EN: &ldquo;Came for the culture, stayed for the conversations on Xena&rdquo;</div></div>
+        <div class="brief-field"><div class="brief-field-label">投放窗口</div><div class="brief-field-value">6月 (Alper持续走红)</div></div>
       </div>
       <div class="brief-footer">
-        <div class="channels"><span class="channel-tag">TikTok</span><span class="channel-tag">FB</span><span class="channel-tag">IG</span></div>
+        <div class="channels"><span class="channel-tag">TikTok</span><span class="channel-tag">IG Reels</span></div>
         <span class="risk low">低风险</span>
-        <button class="copy-btn" onclick="copyBrief(this)">📋 复制Brief</button>
+        <button class="copy-btn" onclick="copyBrief(this)">&#128203; 复制Brief</button>
       </div>
     </div>
 
@@ -2063,10 +1344,10 @@
 
 <div class="report-footer">
   <p>Generated by Regional Trend Monitor Skill &middot; Xena Growth Team</p>
-  <p>报告生成时间: 2026-06-01 19:00 CST &middot; 数据来源: TikTok, X/Twitter (via getdaytrends.com), YouTube, Google Trends, Reddit, Instagram, 新闻媒体 (CNN Indonesia, PhilSTAR, Gulf News, Marca, DNA India, Express Tribune, Straits Times, BBC 等)</p>
+  <p>报告生成时间: 2026-06-02 12:00 CST &middot; 数据来源: X/Twitter (via getdaytrends.com), YouTube (via yt-trends), TikTok, Instagram, Google Trends, 新闻媒体 (CNN Indonesia, PhilSTAR, Al Jazeera, Lovin Riyadh, Times Now, Express Tribune, AsiaOne 等)</p>
 </div>
 
-<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
 
 <script>
 document.querySelectorAll('.country-title').forEach(function(el) {
@@ -2101,11 +1382,11 @@ function toggleAll() {
   var btn = document.getElementById('toggleAllBtn');
   if (allExpanded) {
     cards.forEach(function(c) { c.classList.add('collapsed'); });
-    btn.textContent = '📂 全部展开';
+    btn.textContent = '\uD83D\uDCC2 全部展开';
     allExpanded = false;
   } else {
     cards.forEach(function(c) { c.classList.remove('collapsed'); });
-    btn.textContent = '📁 全部收起';
+    btn.textContent = '\uD83D\uDCC1 全部收起';
     allExpanded = true;
   }
 }
@@ -2114,9 +1395,9 @@ function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
   var btn = document.getElementById('darkModeBtn');
   if (document.body.classList.contains('dark-mode')) {
-    btn.textContent = '☀️ 浅色模式';
+    btn.textContent = '\u2600\uFE0F 浅色模式';
   } else {
-    btn.textContent = '🌙 深色模式';
+    btn.textContent = '\uD83C\uDF19 深色模式';
   }
 }
 
@@ -2125,7 +1406,7 @@ function copyBrief(btn) {
   var title = card.querySelector('.brief-card-header h3').textContent;
   var region = card.querySelector('.brief-region').textContent;
   var fields = card.querySelectorAll('.brief-field');
-  var text = '【' + title + '】\n地区: ' + region + '\n';
+  var text = '\u3010' + title + '\u3011\n地区: ' + region + '\n';
   fields.forEach(function(f) {
     text += f.querySelector('.brief-field-label').textContent + ': ' + f.querySelector('.brief-field-value').textContent + '\n';
   });
@@ -2135,9 +1416,9 @@ function copyBrief(btn) {
   var risk = card.querySelector('.risk');
   if (risk) text += '风险: ' + risk.textContent;
   navigator.clipboard.writeText(text).then(function() {
-    btn.textContent = '✅ 已复制';
+    btn.textContent = '\u2705 已复制';
     btn.classList.add('copied');
-    setTimeout(function() { btn.textContent = '📋 复制Brief'; btn.classList.remove('copied'); }, 2000);
+    setTimeout(function() { btn.textContent = '\uD83D\uDCCB 复制Brief'; btn.classList.remove('copied'); }, 2000);
   });
 }
 
